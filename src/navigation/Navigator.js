@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../screens/Home';
 import Favorities from '../screens/Favorities';
+import colors from '../styles/colors';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,7 +35,13 @@ const FavoriteStack = () => {
 
 const Navigator = () => {
   return (
-    <Tab.Navigator initialRouteName='HomeStack'>
+    <Tab.Navigator
+      initialRouteName='HomeStack'
+      tabBarOptions={{
+        activeTintColor: colors.secondary,
+        allowFontScaling: false,
+        style: { height: 80 }
+      }}>
       <Tab.Screen name='HomeStack' component={HomeStack} />
       <Tab.Screen name='FavoriteStack' component={FavoriteStack} />
     </Tab.Navigator>
