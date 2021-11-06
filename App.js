@@ -15,7 +15,7 @@
  
 export const navigationRef = React.createRef();
 
-const App = () => {
+export default App = () => {
   // const isDarkMode = useColorScheme() === 'dark';
   // const backgroundStyle = {
   //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
