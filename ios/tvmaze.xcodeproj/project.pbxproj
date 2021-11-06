@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* testeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* testeTests.m */; };
+		00E356F31AD99517003FC87E /* tvmazeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* tvmazeTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3F692CE19952CE8395ED07EC /* libPods-tvmaze-tvmazeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D69927E949630A6BE04AFC4 /* libPods-tvmaze-tvmazeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E7D1899D736F1C2C0E5B0D94 /* libPods-teste.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E0CCEF137BED915169D219 /* libPods-teste.a */; };
-		EA3D00BC5B8E6082863633B2 /* libPods-teste-testeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEBD48FA0D116BBD562B38C /* libPods-teste-testeTests.a */; };
+		BCE93A63A9DD991D97AB6DAF /* libPods-tvmaze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D774F66A03D48908FC74D00 /* libPods-tvmaze.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,27 +22,27 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = teste;
+			remoteInfo = tvmaze;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* testeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* tvmazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tvmazeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* testeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testeTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* teste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teste.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = teste/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = teste/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = teste/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = teste/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = teste/main.m; sourceTree = "<group>"; };
-		1CEBD48FA0D116BBD562B38C /* libPods-teste-testeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-teste-testeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		35E0CCEF137BED915169D219 /* libPods-teste.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-teste.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E4068D23D2EF5D4EC6439D8 /* Pods-teste-testeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-testeTests.release.xcconfig"; path = "Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = teste/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84AEABE4202E37FD519E7269 /* Pods-teste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste.release.xcconfig"; path = "Target Support Files/Pods-teste/Pods-teste.release.xcconfig"; sourceTree = "<group>"; };
-		D3C3A7FBF4BD0C2D4328F5DB /* Pods-teste-testeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-testeTests.debug.xcconfig"; path = "Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EAC8CC25C3F653E720E95ED8 /* Pods-teste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste.debug.xcconfig"; path = "Target Support Files/Pods-teste/Pods-teste.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* tvmazeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tvmazeTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = tvmaze/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = tvmaze/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tvmaze/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = tvmaze/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = tvmaze/main.m; sourceTree = "<group>"; };
+		5D69927E949630A6BE04AFC4 /* libPods-tvmaze-tvmazeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvmaze-tvmazeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D774F66A03D48908FC74D00 /* libPods-tvmaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvmaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = tvmaze/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D482355ECA634F737F85C4C /* Pods-tvmaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvmaze.release.xcconfig"; path = "Target Support Files/Pods-tvmaze/Pods-tvmaze.release.xcconfig"; sourceTree = "<group>"; };
+		AB75C6051EDC0FE2F0308601 /* Pods-tvmaze-tvmazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvmaze-tvmazeTests.release.xcconfig"; path = "Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests.release.xcconfig"; sourceTree = "<group>"; };
+		C1F1CC97D84E4DA1D4D790E8 /* Pods-tvmaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvmaze.debug.xcconfig"; path = "Target Support Files/Pods-tvmaze/Pods-tvmaze.debug.xcconfig"; sourceTree = "<group>"; };
+		CE3E13B8C85E206A97054DE7 /* Pods-tvmaze-tvmazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvmaze-tvmazeTests.debug.xcconfig"; path = "Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA3D00BC5B8E6082863633B2 /* libPods-teste-testeTests.a in Frameworks */,
+				3F692CE19952CE8395ED07EC /* libPods-tvmaze-tvmazeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7D1899D736F1C2C0E5B0D94 /* libPods-teste.a in Frameworks */,
+				BCE93A63A9DD991D97AB6DAF /* libPods-tvmaze.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* testeTests */ = {
+		00E356EF1AD99517003FC87E /* tvmazeTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* testeTests.m */,
+				00E356F21AD99517003FC87E /* tvmazeTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = testeTests;
+			path = tvmazeTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* teste */ = {
+		13B07FAE1A68108700A75B9A /* tvmaze */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,15 +93,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = teste;
+			name = tvmaze;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				35E0CCEF137BED915169D219 /* libPods-teste.a */,
-				1CEBD48FA0D116BBD562B38C /* libPods-teste-testeTests.a */,
+				6D774F66A03D48908FC74D00 /* libPods-tvmaze.a */,
+				5D69927E949630A6BE04AFC4 /* libPods-tvmaze-tvmazeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,9 +116,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* teste */,
+				13B07FAE1A68108700A75B9A /* tvmaze */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* testeTests */,
+				00E356EF1AD99517003FC87E /* tvmazeTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F5792A4EAFE196A7325B9C32 /* Pods */,
@@ -131,8 +131,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* teste.app */,
-				00E356EE1AD99517003FC87E /* testeTests.xctest */,
+				13B07F961A680F5B00A75B9A /* tvmaze.app */,
+				00E356EE1AD99517003FC87E /* tvmazeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,59 +140,58 @@
 		F5792A4EAFE196A7325B9C32 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EAC8CC25C3F653E720E95ED8 /* Pods-teste.debug.xcconfig */,
-				84AEABE4202E37FD519E7269 /* Pods-teste.release.xcconfig */,
-				D3C3A7FBF4BD0C2D4328F5DB /* Pods-teste-testeTests.debug.xcconfig */,
-				7E4068D23D2EF5D4EC6439D8 /* Pods-teste-testeTests.release.xcconfig */,
+				C1F1CC97D84E4DA1D4D790E8 /* Pods-tvmaze.debug.xcconfig */,
+				8D482355ECA634F737F85C4C /* Pods-tvmaze.release.xcconfig */,
+				CE3E13B8C85E206A97054DE7 /* Pods-tvmaze-tvmazeTests.debug.xcconfig */,
+				AB75C6051EDC0FE2F0308601 /* Pods-tvmaze-tvmazeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* testeTests */ = {
+		00E356ED1AD99517003FC87E /* tvmazeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "testeTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "tvmazeTests" */;
 			buildPhases = (
-				280C0AC7499F2C5F7A92DDAB /* [CP] Check Pods Manifest.lock */,
+				667FDBF864B5651EC291D3A2 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				345E4B404F1F6E6ABB5D0CC4 /* [CP] Embed Pods Frameworks */,
-				5DEB52611468CF1B77254D6D /* [CP] Copy Pods Resources */,
+				EA2FEAFD87151653CB581AD5 /* [CP] Embed Pods Frameworks */,
+				F664B6C0C66EC69B3C88A508 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = testeTests;
-			productName = testeTests;
-			productReference = 00E356EE1AD99517003FC87E /* testeTests.xctest */;
+			name = tvmazeTests;
+			productName = tvmazeTests;
+			productReference = 00E356EE1AD99517003FC87E /* tvmazeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* teste */ = {
+		13B07F861A680F5B00A75B9A /* tvmaze */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "teste" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "tvmaze" */;
 			buildPhases = (
-				5537F382D462C61D221F28BD /* [CP] Check Pods Manifest.lock */,
+				0B7ED01127EB66E9404C810D /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2454570FA597C9412D737E9D /* [CP] Embed Pods Frameworks */,
-				46EAA4F65FE324B00C128E1E /* [CP] Copy Pods Resources */,
+				B4F9503D4B2EF969ED26C850 /* [CP] Embed Pods Frameworks */,
+				5F5FAB733DBB780F8B44F990 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = teste;
-			productName = teste;
-			productReference = 13B07F961A680F5B00A75B9A /* teste.app */;
+			name = tvmaze;
+			productName = tvmaze;
+			productReference = 13B07F961A680F5B00A75B9A /* tvmaze.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "teste" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "tvmaze" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,8 +224,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* teste */,
-				00E356ED1AD99517003FC87E /* testeTests */,
+				13B07F861A680F5B00A75B9A /* tvmaze */,
+				00E356ED1AD99517003FC87E /* tvmazeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,24 +264,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2454570FA597C9412D737E9D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste/Pods-teste-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste/Pods-teste-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teste/Pods-teste-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		280C0AC7499F2C5F7A92DDAB /* [CP] Check Pods Manifest.lock */ = {
+		0B7ED01127EB66E9404C810D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,48 +279,31 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-teste-testeTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-tvmaze-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		345E4B404F1F6E6ABB5D0CC4 /* [CP] Embed Pods Frameworks */ = {
+		5F5FAB733DBB780F8B44F990 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46EAA4F65FE324B00C128E1E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste/Pods-teste-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze/Pods-tvmaze-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste/Pods-teste-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze/Pods-tvmaze-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teste/Pods-teste-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvmaze/Pods-tvmaze-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5537F382D462C61D221F28BD /* [CP] Check Pods Manifest.lock */ = {
+		667FDBF864B5651EC291D3A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,28 +318,62 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-teste-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-tvmaze-tvmazeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DEB52611468CF1B77254D6D /* [CP] Copy Pods Resources */ = {
+		B4F9503D4B2EF969ED26C850 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze/Pods-tvmaze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze/Pods-tvmaze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teste-testeTests/Pods-teste-testeTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvmaze/Pods-tvmaze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2FEAFD87151653CB581AD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F664B6C0C66EC69B3C88A508 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvmaze-tvmazeTests/Pods-tvmaze-tvmazeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -403,7 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* testeTests.m in Sources */,
+				00E356F31AD99517003FC87E /* tvmazeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +420,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* teste */;
+			target = 13B07F861A680F5B00A75B9A /* tvmaze */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,14 +428,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C3A7FBF4BD0C2D4328F5DB /* Pods-teste-testeTests.debug.xcconfig */;
+			baseConfigurationReference = CE3E13B8C85E206A97054DE7 /* Pods-tvmaze-tvmazeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = testeTests/Info.plist;
+				INFOPLIST_FILE = tvmazeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,17 +449,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teste.app/teste";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tvmaze.app/tvmaze";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E4068D23D2EF5D4EC6439D8 /* Pods-teste-testeTests.release.xcconfig */;
+			baseConfigurationReference = AB75C6051EDC0FE2F0308601 /* Pods-tvmaze-tvmazeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = testeTests/Info.plist;
+				INFOPLIST_FILE = tvmazeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,19 +473,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teste.app/teste";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tvmaze.app/tvmaze";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAC8CC25C3F653E720E95ED8 /* Pods-teste.debug.xcconfig */;
+			baseConfigurationReference = C1F1CC97D84E4DA1D4D790E8 /* Pods-tvmaze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = teste/Info.plist;
+				INFOPLIST_FILE = tvmaze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,8 +495,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = teste;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.tvmaze;
+				PRODUCT_NAME = tvmaze;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,12 +505,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84AEABE4202E37FD519E7269 /* Pods-teste.release.xcconfig */;
+			baseConfigurationReference = 8D482355ECA634F737F85C4C /* Pods-tvmaze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = teste/Info.plist;
+				INFOPLIST_FILE = tvmaze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,8 +520,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = teste;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.tvmaze;
+				PRODUCT_NAME = tvmaze;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -656,7 +655,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "testeTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "tvmazeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -665,7 +664,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "teste" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "tvmaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -674,7 +673,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "teste" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "tvmaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
