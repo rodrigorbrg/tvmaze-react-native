@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
+import Movie from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Home from '../screens/Home';
 import Show from '../screens/Show';
@@ -75,6 +76,10 @@ const Navigator = () => {
         tabBarStyle: { backgroundColor: colors.card },
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.white,
+        // tabBarIcon: ({ focused, color, size }) => {
+        //   // You can return any component that you like here!
+        //   return <Movie name={'movie'} size={14} color={focused ? colors.primary : colors.white} />;
+        // },
       }}
     >
       <Tab.Screen
@@ -82,11 +87,13 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Home',
             tabBarIcon: ({ focused }) => {
-              <Icon
-                name={'search1'}
-                size={14}
-                color={focused ? colors.primary : colors.white}
-              />;
+              return (
+                <Movie
+                  name={'movie'}
+                  size={14}
+                  color={focused ? colors.primary : colors.white}
+                />
+              );
             },
           };
           return navigationOptions;
@@ -99,11 +106,13 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Search',
             tabBarIcon: ({ focused }) => {
-              <Icon
-                name={'search1'}
-                size={14}
-                color={focused ? colors.primary : colors.white}
-              />;
+              return (
+                <Icon
+                  name={'search1'}
+                  size={14}
+                  color={focused ? colors.primary : colors.white}
+                />
+              );
             },
           };
           return navigationOptions;
@@ -116,11 +125,13 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Favorities',
             tabBarIcon: ({ focused }) => {
-              <Icon
-                name={'pushpin'}
-                size={14}
-                color={focused ? colors.primary : colors.white}
-              />;
+              return (
+                <Icon
+                  name={'pushpin'}
+                  size={14}
+                  color={focused ? colors.primary : colors.white}
+                />
+              );
             },
           };
           return navigationOptions;
