@@ -14,6 +14,8 @@
     "@react-navigation/elements": "^1.2.1",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/stack": "^6.0.11",
+    "axios": "^0.24.0",
+    "moment": "^2.29.1",
     "react": "17.0.2",
     "react-native": "0.66.1",
     "react-native-elements": "^3.4.2",
@@ -23,7 +25,8 @@
     "react-native-vector-icons": "^8.1.0",
     "react-navigation": "^4.4.4",
     "react-redux": "^7.2.6",
-    "redux": "^4.1.2"
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
