@@ -19,7 +19,7 @@ const Home = () => {
   const loadMoreShows = async () => {
     const [err, res] = await service.allShows(page);
     if (res) {
-      setPage(page+1);
+      setPage(page + 1);
       setShows(shows.concat(res));
     }
   };
@@ -27,18 +27,6 @@ const Home = () => {
   useEffect(() => {
     loadMoreShows();
   }, []);
-
-  // useEffect(() => {
-  //   if (search) {
-  //     const queryShows = async () => {
-  //       const [err, res] = await service.searchShow(search);
-  //       if (res) {
-  //         setShows(res);
-  //       }
-  //     };
-  //     queryShows();
-  //   }
-  // }, [search]);
 
   const selectShow = async (show) => {
     const service = TVMaze();
@@ -51,12 +39,11 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      {/* <SearchBar choice={search} setChoice={setSearch} /> */}
       <FlatList
         data={shows}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <ShowItem show={item} onPress={() => selectShow(item)} />
+          <ShowItem {...item} onPress={() => selectShow(item)} />
         )}
         onEndReached={loadMoreShows}
         onEndReachedThreshold={5}
