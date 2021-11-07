@@ -3,6 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../screens/Home';
+import Show from '../screens/Show';
+
 import Favorities from '../screens/Favorities';
 import colors from '../styles/colors';
 
@@ -15,6 +17,11 @@ const HomeStack = () => {
       <Stack.Screen
         name='Home'
         component={Home}
+        options={{ headerShown: false, animationEnabled: false }}
+      />
+      <Stack.Screen
+        name='Show'
+        component={Show}
         options={{ headerShown: false, animationEnabled: false }}
       />
     </Stack.Navigator>
@@ -40,10 +47,29 @@ const Navigator = () => {
       tabBarOptions={{
         activeTintColor: colors.secondary,
         allowFontScaling: false,
-        style: { height: 80 }
-      }}>
-      <Tab.Screen name='HomeStack' component={HomeStack} />
-      <Tab.Screen name='FavoriteStack' component={FavoriteStack} />
+        style: { height: 80, backgroundColor: colors.primary },
+      }}
+    >
+      <Tab.Screen
+        options={() => {
+          const navigationOptions = {
+            tabBarLabel: 'Search',
+          };
+          return navigationOptions;
+        }}
+        name='HomeStack'
+        component={HomeStack}
+      />
+      <Tab.Screen
+        options={() => {
+          const navigationOptions = {
+            tabBarLabel: 'Favorities',
+          };
+          return navigationOptions;
+        }}
+        name='FavoriteStack'
+        component={FavoriteStack}
+      />
     </Tab.Navigator>
   );
 };
