@@ -42,7 +42,7 @@ const Search = () => {
         data={shows}
         keyExtractor={(item) => item.show.id}
         renderItem={({ item }) => (
-          <ShowItem show={item.show} onPress={() => selectShow(item.show)} />
+          <ShowItem {...item.show} onPress={() => selectShow(item.show)} />
         )}
       />
     </View>
