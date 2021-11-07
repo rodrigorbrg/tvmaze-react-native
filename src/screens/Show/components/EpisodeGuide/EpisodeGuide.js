@@ -29,7 +29,7 @@ function EpisodeGuide({ id, name, image, premiered, ended, genres, summary, sect
             />
           </View>
           <View>
-            <Text numberOfLines={2} style={styles.description}>
+            <Text ellipsizeMode={'tail'} numberOfLines={2} style={styles.description}>
               {'Genres: \n' + genres}
             </Text>
             <Text style={styles.aired}>{aired}</Text>

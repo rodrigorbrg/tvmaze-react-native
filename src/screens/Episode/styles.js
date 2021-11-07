@@ -4,22 +4,16 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
 export default styles = StyleSheet.create({
+  contentContainer: {
+    backgroundColor: colors.background,
+    flexGrow: 1,
+  },
   container: {
     backgroundColor: colors.background,
-    flex: 1,
-    justifyContent: 'flex-start'
-  },
-  banner: {
-    flex: 1,
-    justifyContent: 'flex-start'
-  },
-  image: {
-    width: '100%',
-    flex: 1,
   },
   information: {
-    flex: 1,
     paddingHorizontal: 20,
+    marginTop: 16,
   },
   aired: {
     color: colors.white,
