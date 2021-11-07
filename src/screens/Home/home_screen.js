@@ -3,13 +3,11 @@ import { View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import TVMaze from '../../services/tvmaze';
-import SearchBar from '../../components/SeachBar';
 import ShowItem from '../../components/ShowItem';
 
 import styles from './styles';
 
 const Home = () => {
-  const [search, setSearch] = useState();
   const [shows, setShows] = useState([]);
   const [page, setPage] = useState(0);
   const navigation = useNavigation();
