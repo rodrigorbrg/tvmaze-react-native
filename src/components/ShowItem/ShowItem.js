@@ -16,14 +16,12 @@ function ShowItem({ show, onPress }) {
           resizeMode={'contain'}
           source={{
             uri: show?.image?.medium,
-            // width: 120,
-            // height: 60,
           }}
           onPress={onPress}
         />
-        <View>
+        <View style={styles.description}>
           <Text style={styles.nameShow}>{show.name}</Text>
-          <Text style={styles.description}>{show.genres}</Text>
+          <Text style={styles.genres}>{show.genres.map(item => item + ' ' )}</Text>
         </View>
         <Icon
           style={styles.favorite}

@@ -5,12 +5,14 @@ import fonts from '../../styles/fonts';
 
 export default styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
     borderBottomColor: colors.gray3,
     borderBottomWidth: 1,
-    flex: 1,
+    flex: 5,
     flexDirection: 'row',
-    paddingBottom: 8,
+    // justifyContent: 'space-between',
     marginHorizontal: 16,
+    paddingBottom: 8,
     paddingTop: 8,
     width: '100%',
   },
@@ -23,20 +25,23 @@ export default styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  description: {
+    flex: 4,
+  },
   nameShow: {
     color: colors.white,
     fontSize: fonts.size.title,
     textAlign: 'left',
     marginStart: 10,
   },
-  description: {
+  genres: {
     color: colors.white,
     fontSize: fonts.size.descrition,
     textAlign: 'left',
     marginStart: 10,
   },
   favorite: {
-    // alignContent: 'flex-end',
-    // alignSelf: 'stretch',
+    flex: 1,
+    // alignSelf: 'center',
   }
 });
