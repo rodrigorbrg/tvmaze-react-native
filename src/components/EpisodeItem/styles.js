@@ -19,21 +19,21 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
   },
   episodeName: {
-    color: colors.secondary,
+    color: colors.white,
     fontSize: fonts.size.descrition,
     fontWeight: '600',
     textAlign: 'left',
     width: '100%',
   },
   airdate: {
-    color: colors.secondary,
+    color: colors.white,
     fontSize: fonts.size.font12,
     fontWeight: '300',
     textAlign: 'left',
     width: '100%',
   },
   rating: {
-    color: colors.secondary,
+    color: colors.white,
     fontSize: fonts.size.font12,
   },
 });

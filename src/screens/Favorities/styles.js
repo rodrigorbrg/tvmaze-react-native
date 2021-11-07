@@ -1,20 +1,12 @@
 import { StyleSheet } from 'react-native';
 
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
+
 export default styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  container: {
+    backgroundColor: colors.background,
+    flex: 1,
+    paddingHorizontal: 20,
   },
 });

@@ -5,17 +5,17 @@ import fonts from '../../styles/fonts';
 
 export default StyleSheet.create({
   containerStyle: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.background,
     borderTopColor: colors.white,
     width: '100%',
   },
   inputContainerStyle: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.card,
     borderRadius: 10
   },
   inputStyle: {
-    backgroundColor: colors.white,
-    color: colors.black,
+    backgroundColor: colors.background,
+    color: colors.white,
     fontSize: fonts.size.font14,
   }
 })

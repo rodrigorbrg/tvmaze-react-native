@@ -24,13 +24,13 @@ export default styles = StyleSheet.create({
     height: '100%',
   },
   nameShow: {
-    color: colors.secondary,
+    color: colors.white,
     fontSize: fonts.size.title,
     textAlign: 'left',
     marginStart: 10,
   },
   description: {
-    color: colors.secondary,
+    color: colors.white,
     fontSize: fonts.size.descrition,
     textAlign: 'left',
     marginStart: 10,
