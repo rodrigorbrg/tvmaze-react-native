@@ -9,13 +9,14 @@ import colors from '../../styles/colors';
 
 import styles from './styles';
 
-function EpisodeItem({ episode }) {
+function EpisodeItem({ showID, episode }) {
   const { navigate } = useNavigation();
 
   const selectEpisode = async () => {
     const service = TVMaze();
+    console.log('click episode', episode)
     const [err, res] = await service.episodeDetails(
-      episode.id,
+      showID,
       episode.season,
       episode.number
     );

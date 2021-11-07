@@ -51,7 +51,7 @@ function EpisodeGuide({ show, sections }) {
       <Text style={styles.nameShow}>{name}</Text>
       <SectionList
         renderItem={({ item }) => {
-          return <EpisodeItem episode={item}></EpisodeItem>;
+          return <EpisodeItem showID={show.id} episode={item}></EpisodeItem>;
         }}
         renderSectionHeader={({ section: { title } }) => {
           return <TitleSection title={title}></TitleSection>;
