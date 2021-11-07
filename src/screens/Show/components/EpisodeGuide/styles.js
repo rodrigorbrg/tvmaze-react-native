@@ -6,11 +6,7 @@ import fonts from '../../../../styles/fonts';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  episodeGuide: {
-    borderTopEndRadius: 6,
-    borderTopStartRadius: 6,
-    marginTop: 16,
+    marginBottom: 8,
   },
   nameShow: {
     color: colors.white,
@@ -25,6 +21,7 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     height: '100%',
     width: '100%',
+    marginBottom: 8,
   },
   poster: {
     height: 200,

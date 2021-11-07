@@ -7,11 +7,13 @@ export default {
   warning: '#E06C3D',
 
   white: '#FFFFFF',
-  black: '#2E2E2E',
+  black: '#121212',
   gray1: '#707070', // Descriptions
   gray2: '#D1D1D6', // Arrow
   gray3: '#8E8E93', // Values
   gray4: '#C7C7CC', // Values
 
   transparent: 'transparent',
+  background: '#121212',
+  card: '#323232',
 };

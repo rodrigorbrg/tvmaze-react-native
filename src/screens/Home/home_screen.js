@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList } from 'react-native';
-import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
 import TVMaze from '../../services/tvmaze';
@@ -11,36 +10,56 @@ import styles from './styles';
 
 const Home = () => {
   const [search, setSearch] = useState();
+  const [shows, setShows] = useState([]);
+  const [page, setPage] = useState(0);
   const navigation = useNavigation();
-  const [shows, setShows] = useState();
+
+  const service = TVMaze();
+
+  const loadMoreShows = async () => {
+    const [err, res] = await service.allShows(page);
+    if (res) {
+      setPage(page+1);
+      setShows(shows.concat(res));
+    }
+  };
 
   useEffect(() => {
-    if (search) {
-      const qfs = async () => {
-        const service = TVMaze();
-        const [err, res] = await service.searchShow(search);
-        setShows(res);
-      };
-      qfs();
-    }
-  }, [search]);
+    loadMoreShows();
+  }, []);
+
+  // useEffect(() => {
+  //   if (search) {
+  //     const queryShows = async () => {
+  //       const [err, res] = await service.searchShow(search);
+  //       if (res) {
+  //         setShows(res);
+  //       }
+  //     };
+  //     queryShows();
+  //   }
+  // }, [search]);
 
   const selectShow = async (show) => {
     const service = TVMaze();
 
     const [err, res] = await service.episodeList(show.id);
-    navigation.navigate('Show', { show, episodes: res});
+    if (res) {
+      navigation.navigate('Show', { show, episodes: res });
+    }
   };
 
   return (
     <View style={styles.container}>
-      <SearchBar choice={search} setChoice={setSearch} />
+      {/* <SearchBar choice={search} setChoice={setSearch} /> */}
       <FlatList
         data={shows}
-        keyExtractor={(item) => item.show.id}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <ShowItem show={item.show} onPress={() => selectShow(item.show)} />
+          <ShowItem show={item} onPress={() => selectShow(item)} />
         )}
+        onEndReached={loadMoreShows}
+        onEndReachedThreshold={5}
       />
     </View>
   );

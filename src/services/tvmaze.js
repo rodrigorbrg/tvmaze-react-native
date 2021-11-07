@@ -1,39 +1,45 @@
 import http from '../utils/http';
 
 export default TVMaze = () => {
+  const allShows = async (page) => {
+    return await http.coreGet(`/shows?page=${page}`);
+  };
 
-    const searchShow = async (query) => {
-      return await http.coreGet(`/search/shows?q=${query}`)
-    }
+  const searchShow = async (query) => {
+    return await http.coreGet(`/search/shows?q=${query}`);
+  };
 
-    const showDetails = async (id) => {
-      return await http.coreGet(`/shows/${id}`)
-    }
+  const showDetails = async (id) => {
+    return await http.coreGet(`/shows/${id}`);
+  };
 
-    const showImages = async (id) => {
-      return await http.coreGet(`/shows/${id}/images`)
-    }
+  const showImages = async (id) => {
+    return await http.coreGet(`/shows/${id}/images`);
+  };
 
-    const showSeasons  = async (id) => {
-      return await http.coreGet(`/shows/${id}/seasons`)
-    }
+  const showSeasons = async (id) => {
+    return await http.coreGet(`/shows/${id}/seasons`);
+  };
 
-    const episodeList = async (id) => {
-      return await http.coreGet(`/shows/${id}/episodes`)
-    }
+  const episodeList = async (id) => {
+    return await http.coreGet(`/shows/${id}/episodes`);
+  };
 
-    const episodeDetails = async (id, season, number) => {
-      return await http.coreGet(`shows/${id}/episodebynumber?season=${season}&number=${number}`)
-    }
+  const episodeDetails = async (id, season, number) => {
+    return await http.coreGet(
+      `shows/${id}/episodebynumber?season=${season}&number=${number}`
+    );
+  };
 
-    return {
-      searchShow,
-      showDetails,
-      showImages,
-      showSeasons,
-      episodeList,
-      episodeDetails,
-    }
+  return {
+    allShows,
+    searchShow,
+    showDetails,
+    showImages,
+    showSeasons,
+    episodeList,
+    episodeDetails,
+  };
 };
 // Show {
 //   "score": 0.9083924,

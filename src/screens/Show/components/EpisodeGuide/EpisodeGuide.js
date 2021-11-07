@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, SectionList, Image } from 'react-native';
-import moment from 'moment';
 
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
+import { formatPeriodDate } from '../../../../utils/date'; 
 
 import styles from './styles';
 
 function EpisodeGuide({ show, sections }) {
+  const [name, setName] = useState('');
+  const [uriPoster, setUriPoster] = useState('');
+  const [aired, setAired] = useState('');
+  const [genres, setGenres] = useState([]);
 
+  useEffect(() => {
+    setName(show?.name);
+    setUriPoster(show?.image?.original);
+    setAired(formatPeriodDate(show?.premiered, show?.ended));
+    setGenres(show?.genres?.map((element) => element));
+  }, [show]);
+  
   const _renderTopPage = () => {
     return (
       <View style={styles.container}>
@@ -17,18 +28,17 @@ function EpisodeGuide({ show, sections }) {
             <Image
               style={styles.image}
               resizeMode={'contain'}
+              defaultSource={require('../../../../assets/images/default-movie.png')}
               source={{
-                uri: show?.image?.original,
+                uri: uriPoster,
               }}
             />
           </View>
           <View>
             <Text numberOfLines={2} style={styles.description}>
-              {'Genres: \n' + show?.genres.map((element) => element)}
+              {'Genres: \n' + genres}
             </Text>
-            <Text style={styles.aired}>{`${moment(show?.premiered).format(
-              'YYYY'
-            )} - ${moment(show?.ended).format('YYYY')} `}</Text>
+            <Text style={styles.aired}>{aired}</Text>
           </View>
         </View>
         <Text style={styles.summary}>{show?.summary}</Text>
@@ -37,10 +47,8 @@ function EpisodeGuide({ show, sections }) {
   };
 
   return (
-    <View>
-      <View style={styles.episodeGuide}>
-        <Text style={styles.nameShow}>{'House'}</Text>
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.nameShow}>{name}</Text>
       <SectionList
         renderItem={({ item }) => {
           return <EpisodeItem episode={item}></EpisodeItem>;

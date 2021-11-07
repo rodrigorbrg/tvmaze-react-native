@@ -6,7 +6,8 @@ import fonts from '../../styles/fonts';
 export default StyleSheet.create({
   containerStyle: {
     backgroundColor: colors.background,
-    borderTopColor: colors.white,
+    borderBottomColor: colors.background,
+    borderTopColor: colors.card,
     width: '100%',
   },
   inputContainerStyle: {
@@ -14,7 +15,7 @@ export default StyleSheet.create({
     borderRadius: 10
   },
   inputStyle: {
-    backgroundColor: colors.background,
+    backgroundColor: colors.card,
     color: colors.white,
     fontSize: fonts.size.font14,
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import moment from 'moment';
 
@@ -9,10 +10,18 @@ import colors from '../../styles/colors';
 import styles from './styles';
 
 function EpisodeItem({ episode }) {
+  const { navigate } = useNavigation();
 
-  const selectEpisode = async (episode) => {
+  const selectEpisode = async () => {
     const service = TVMaze();
-    const [err, res] = await service.episodeDetails(episode.id, episode.season, episode.number);
+    const [err, res] = await service.episodeDetails(
+      episode.id,
+      episode.season,
+      episode.number
+    );
+    if (res) {
+      navigate('Episode', { episode: res });
+    }
   };
 
   return (
@@ -24,14 +33,12 @@ function EpisodeItem({ episode }) {
             {moment(episode.airdate).format('MM/DD/YYYY')}
           </Text>
         </View>
-        <Text style={styles.rating}>
-          {'Rate ' + episode?.rating?.average}
-          <Icon
-            name={'star'}
-            size={12}
-            color={colors.positive}
-          />
-        </Text>
+        {episode?.rating?.average ? (
+          <Text style={styles.rating}>
+            {'Rate ' + episode?.rating?.average}
+            <Icon name={'star'} size={12} color={colors.positive} />
+          </Text>
+        ) : null}
       </View>
     </TouchableOpacity>
   );

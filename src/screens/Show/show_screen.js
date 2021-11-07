@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
 import EpisodeGuide from './components/EpisodeGuide';
 
@@ -18,7 +17,6 @@ const Show = ({ route }) => {
 
   useEffect(() => {
     let seasonSection = [];
-    console.log('EP', episodes);
     if (episodes) {
       episodes.map((episode) => {
         const season = seasonSection.find((section) => {
@@ -39,7 +37,9 @@ const Show = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <EpisodeGuide show={show} sections={sections} />
+      { sections ? 
+        <EpisodeGuide show={show} sections={sections} /> : null
+      }
     </View>
   );
 };

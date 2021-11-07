@@ -55,9 +55,9 @@ const Navigator = () => {
         headerStyle: { backgroundColor: colors.card, height: 80 },
         headerTitle: 'TV Maze',
         headerTitleStyle: { color: colors.white },
-        // tabBarStyle: { position: 'absolute' },
-        // allowFontScaling: false,
-        // style: { height: 80, backgroundColor: colors.primary },
+        tabBarStyle: { backgroundColor: colors.card },
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.white,
       }}
     >
       <Tab.Screen
@@ -65,7 +65,7 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Search',
             tabBarIcon: ({ focused }) => {
-              <Icon name={'search1'} size={14} color={colors.primary} />;
+              <Icon name={'search1'} size={14} color={focused ? colors.primary : colors.white} />;
             },
           };
           return navigationOptions;
@@ -78,7 +78,7 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Favorities',
             tabBarIcon: ({ focused }) => {
-              <Icon name={'pushpin'} size={14} color={colors.primary} />;
+              <Icon name={'pushpin'} size={14} color={focused ? colors.primary : colors.white} />;
             },
           };
           return navigationOptions;
