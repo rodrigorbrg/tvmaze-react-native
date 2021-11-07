@@ -17,7 +17,6 @@ function ShowItem({ image, name, genres, onPress }) {
           source={{
             uri: image?.medium,
           }}
-          onPress={onPress}
         />
         <View style={styles.description}>
           <Text style={styles.nameShow}>{name}</Text>
