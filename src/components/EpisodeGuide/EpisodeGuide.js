@@ -9,20 +9,15 @@ import styles from './styles';
 
 function EpisodeGuide({ sections }) {
 
-  const selectEpisode = async (episode) => {
-    const service = TVMaze();
-    const [err, res] = await service.episodeDetails(episode.id, episode.season, episode.number);
-  };
-
   return (
     <View>
       <View style={styles.episodeGuide}>
         <Text style={styles.guide}>{'Episode Guide'}</Text>
       </View>
       <SectionList
-        renderItem={({ item, index, section }) => {
+        renderItem={({ item }) => {
           return (
-            <EpisodeItem episode={item} onPress={selectEpisode}></EpisodeItem>
+            <EpisodeItem episode={item}></EpisodeItem>
           );
         }}
         renderSectionHeader={({ section: { title } }) => {

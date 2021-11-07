@@ -1,16 +1,22 @@
 import React from 'react';
-import { Text, View, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import moment from 'moment';
 
+import TVMaze from '../../services/tvmaze';
 import colors from '../../styles/colors';
 
 import styles from './styles';
 
-function EpisodeItem({ episode, onPress }) {
-  //loadingIndicatorSource defaultSource
+function EpisodeItem({ episode }) {
+
+  const selectEpisode = async (episode) => {
+    const service = TVMaze();
+    const [err, res] = await service.episodeDetails(episode.id, episode.season, episode.number);
+  };
+
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableOpacity onPress={selectEpisode}>
       <View style={styles.container}>
         <View style={styles.group}>
           <Text style={styles.episodeName}>{episode.name}</Text>
@@ -27,7 +33,7 @@ function EpisodeItem({ episode, onPress }) {
           />
         </Text>
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
   );
 }
 
