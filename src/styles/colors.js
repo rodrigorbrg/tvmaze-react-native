@@ -3,6 +3,7 @@ export default {
   secondary: '#14331D',
   positive: '#49B648',
   negative: '#E0433C',
+  neutral: '#2781CF',
   warning: '#E06C3D',
 
   white: '#FFFFFF',
