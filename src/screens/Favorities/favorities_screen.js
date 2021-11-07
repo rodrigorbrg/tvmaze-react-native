@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import { View } from 'react-native';
 import { useSelector } from 'react-redux';
@@ -16,17 +8,17 @@ import styles from './styles';
 
 const Favorities = () => {
   // const navigation = useNavigation();
-  // const favorities = useSelector(({ shows }) => shows.favorities);
+  const favorities = useSelector(({ storage }) => storage.favorities);
 
   return (
-    <View style={styles.sectionContainer}>
+    <View style={styles.container}>
       {/* <FlatList
         data={favorities}
         keyExtractor={(item) => {
-          return favorities.show.id;
+          return item.show.id;
         }}
         renderItem={({ item }) => (
-          <Showitem {...item} />
+          <ShowItem {...item} />
         )}
         refreshControl={
           <RefreshControl refreshing={loading} onRefresh={() => onRefresh()} />

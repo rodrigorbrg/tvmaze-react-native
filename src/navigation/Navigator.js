@@ -15,33 +15,33 @@ const Tab = createBottomTabNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator initialRouteName='Home'>
-      <Stack.Screen
-        name='Home'
-        component={Home}
-        options={{ headerShown: false, animationEnabled: false }}
-      />
-      <Stack.Screen
-        name='Show'
-        component={Show}
-        options={{ headerShown: false, animationEnabled: false }}
-      />
-      <Stack.Screen
-        name='Episode'
-        component={Episode}
-        options={{ headerShown: false, animationEnabled: false }}
-      />
+    <Stack.Navigator
+      initialRouteName='Home'
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.card },
+        headerTitleStyle: { color: colors.white },
+      }}
+    >
+      <Stack.Screen name='Home' component={Home} />
+      <Stack.Screen name='Show' component={Show} />
+      <Stack.Screen name='Episode' component={Episode} />
     </Stack.Navigator>
   );
 };
 
 const FavoriteStack = () => {
   return (
-    <Stack.Navigator initialRouteName='Favorities'>
+    <Stack.Navigator
+      initialRouteName='Favorities'
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.card },
+        headerTitleStyle: { color: colors.white },
+      }}
+    >
       <Stack.Screen
         name='Favorities'
         component={Favorities}
-        options={{ headerShown: false, animationEnabled: false }}
+        options={{ animationEnabled: false }}
       />
     </Stack.Navigator>
   );
@@ -54,6 +54,7 @@ const Navigator = () => {
       screenOptions={{
         headerStyle: { backgroundColor: colors.card, height: 80 },
         headerTitle: 'TV Maze',
+        headerShown: false,
         headerTitleStyle: { color: colors.white },
         tabBarStyle: { backgroundColor: colors.card },
         tabBarActiveTintColor: colors.primary,
@@ -65,7 +66,11 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Search',
             tabBarIcon: ({ focused }) => {
-              <Icon name={'search1'} size={14} color={focused ? colors.primary : colors.white} />;
+              <Icon
+                name={'search1'}
+                size={14}
+                color={focused ? colors.primary : colors.white}
+              />;
             },
           };
           return navigationOptions;
@@ -78,7 +83,11 @@ const Navigator = () => {
           const navigationOptions = {
             tabBarLabel: 'Favorities',
             tabBarIcon: ({ focused }) => {
-              <Icon name={'pushpin'} size={14} color={focused ? colors.primary : colors.white} />;
+              <Icon
+                name={'pushpin'}
+                size={14}
+                color={focused ? colors.primary : colors.white}
+              />;
             },
           };
           return navigationOptions;

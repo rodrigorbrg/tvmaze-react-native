@@ -7,23 +7,23 @@
  */
 
  import React from 'react';
- import { useColorScheme } from 'react-native';
+ import { StatusBar } from 'react-native';
+ import { Provider } from 'react-redux';
  import { NavigationContainer } from '@react-navigation/native';
- import { Colors } from 'react-native/Libraries/NewAppScreen';
  
  import Navigator from './src/navigation/Navigator';
+ import Store from './src/store/storeConfig'
  
 export const navigationRef = React.createRef();
 
 export default App = () => {
-  // const isDarkMode = useColorScheme() === 'dark';
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
+  StatusBar.setBarStyle('light-content', false);
 
   return (
-    <NavigationContainer ref={navigationRef}>
-      <Navigator />
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer ref={navigationRef}>
+        <Navigator />
+      </NavigationContainer>
+    </Provider>
   );
 };

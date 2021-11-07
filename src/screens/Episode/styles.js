@@ -44,7 +44,8 @@ export default styles = StyleSheet.create({
   },
   summary: {
     color: colors.white,
-    fontSize: fonts.size.font14,
+    fontSize: fonts.size.font16,
     textAlign: 'left',
+    marginTop: 16,
   },
 });

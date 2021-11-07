@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
 
+import { formatDate } from '../../utils/date';
+
 import styles from './styles';
 
 const Episode = ({ route }) => {
@@ -25,8 +27,8 @@ const Episode = ({ route }) => {
         <Text style={styles.nameShow}>{episode.name}</Text>
         <Text style={styles.season}>{`Season ${episode?.season}`}</Text>
         <Text style={styles.number}>{`Episode ${episode?.number}`}</Text>
-        <Text style={styles.aired}>{episode.airdate}</Text>
-        <Text style={styles.summary}>{episode?.summary}</Text>
+        <Text style={styles.aired}>{`Aired ${formatDate(episode.airdate)}`}</Text>
+        <Text style={styles.summary}>{`Summary\n\n${episode?.summary}`}</Text>
       </View>
     </View>
   );
