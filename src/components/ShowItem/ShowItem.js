@@ -1,13 +1,27 @@
 import React from 'react';
 import { Text, View, Image, TouchableWithoutFeedback } from 'react-native';
+import { useDispatch } from "react-redux";
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import colors from '../../styles/colors';
+import { addFavoriteShow } from '../../store/actions/shows';
 
 import styles from './styles';
 
-function ShowItem({ image, name, genres, onPress }) {
+function ShowItem({ id, image, name, genres, onPress }) {
   //loadingIndicatorSource defaultSource
+  const dispatch = useDispatch();
+
+  const addToFavorities = () => {
+    const show = {
+      id,
+      image,
+      name,
+      genres
+    }
+    dispatch(addFavoriteShow(show));
+  }
+
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
@@ -23,6 +37,7 @@ function ShowItem({ image, name, genres, onPress }) {
           <Text style={styles.genres}>{genres.map(item => item + ' ' )}</Text>
         </View>
         <Icon
+          onPress={addToFavorities}
           style={styles.favorite}
           name={'star'}
           size={22}
