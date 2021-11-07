@@ -69,17 +69,13 @@ const Navigator = () => {
     <Tab.Navigator
       initialRouteName='HomeStack'
       screenOptions={{
-        headerStyle: { backgroundColor: colors.card, height: 80 },
-        headerTitle: 'TV Maze',
+        // headerStyle: { backgroundColor: colors.card, height: 80 },
+        // headerTitle: 'TV Maze',
+        // headerTitleStyle: { color: colors.white },
         headerShown: false,
-        headerTitleStyle: { color: colors.white },
         tabBarStyle: { backgroundColor: colors.card },
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.white,
-        // tabBarIcon: ({ focused, color, size }) => {
-        //   // You can return any component that you like here!
-        //   return <Movie name={'movie'} size={14} color={focused ? colors.primary : colors.white} />;
-        // },
       }}
     >
       <Tab.Screen
@@ -90,7 +86,7 @@ const Navigator = () => {
               return (
                 <Movie
                   name={'movie'}
-                  size={14}
+                  size={16}
                   color={focused ? colors.primary : colors.white}
                 />
               );
@@ -109,7 +105,7 @@ const Navigator = () => {
               return (
                 <Icon
                   name={'search1'}
-                  size={14}
+                  size={16}
                   color={focused ? colors.primary : colors.white}
                 />
               );
@@ -128,7 +124,7 @@ const Navigator = () => {
               return (
                 <Icon
                   name={'pushpin'}
-                  size={14}
+                  size={16}
                   color={focused ? colors.primary : colors.white}
                 />
               );
