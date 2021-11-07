@@ -7,6 +7,8 @@ import Home from '../screens/Home';
 import Show from '../screens/Show';
 import Episode from '../screens/Episode';
 
+import Search from '../screens/Search';
+
 import Favorities from '../screens/Favorities';
 import colors from '../styles/colors';
 
@@ -25,6 +27,20 @@ const HomeStack = () => {
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='Show' component={Show} />
       <Stack.Screen name='Episode' component={Episode} />
+    </Stack.Navigator>
+  );
+};
+
+const SearchStack = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName='Search'
+      screenOptions={{
+        headerStyle: { backgroundColor: colors.card },
+        headerTitleStyle: { color: colors.white },
+      }}
+    >
+      <Stack.Screen name='Search' component={Search} />
     </Stack.Navigator>
   );
 };
@@ -64,7 +80,7 @@ const Navigator = () => {
       <Tab.Screen
         options={() => {
           const navigationOptions = {
-            tabBarLabel: 'Search',
+            tabBarLabel: 'Home',
             tabBarIcon: ({ focused }) => {
               <Icon
                 name={'search1'}
@@ -77,6 +93,23 @@ const Navigator = () => {
         }}
         name='HomeStack'
         component={HomeStack}
+      />
+      <Tab.Screen
+        options={() => {
+          const navigationOptions = {
+            tabBarLabel: 'Search',
+            tabBarIcon: ({ focused }) => {
+              <Icon
+                name={'search1'}
+                size={14}
+                color={focused ? colors.primary : colors.white}
+              />;
+            },
+          };
+          return navigationOptions;
+        }}
+        name='SearchStack'
+        component={SearchStack}
       />
       <Tab.Screen
         options={() => {
