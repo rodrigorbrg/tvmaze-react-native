@@ -38,7 +38,7 @@ const Show = ({ route }) => {
   return (
     <View style={styles.container}>
       { sections ? 
-        <EpisodeGuide show={show} sections={sections} /> : null
+        <EpisodeGuide {...show} sections={sections} /> : null
       }
     </View>
   );

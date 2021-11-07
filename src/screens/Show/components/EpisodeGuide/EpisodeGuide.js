@@ -7,18 +7,12 @@ import { formatPeriodDate } from '../../../../utils/date';
 
 import styles from './styles';
 
-function EpisodeGuide({ show, sections }) {
-  const [name, setName] = useState('');
-  const [uriPoster, setUriPoster] = useState('');
+function EpisodeGuide({ id, name, image, premiered, ended, genres, summary, sections }) {
   const [aired, setAired] = useState('');
-  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
-    setName(show?.name);
-    setUriPoster(show?.image?.original);
-    setAired(formatPeriodDate(show?.premiered, show?.ended));
-    setGenres(show?.genres?.map((element) => element));
-  }, [show]);
+    setAired(formatPeriodDate(premiered, ended));
+  }, [premiered, ended]);
   
   const _renderTopPage = () => {
     return (
@@ -30,7 +24,7 @@ function EpisodeGuide({ show, sections }) {
               resizeMode={'contain'}
               defaultSource={require('../../../../assets/images/default-movie.png')}
               source={{
-                uri: uriPoster,
+                uri: image?.original,
               }}
             />
           </View>
@@ -41,7 +35,7 @@ function EpisodeGuide({ show, sections }) {
             <Text style={styles.aired}>{aired}</Text>
           </View>
         </View>
-        <Text style={styles.summary}>{show?.summary}</Text>
+        <Text style={styles.summary}>{summary}</Text>
       </View>
     );
   };
@@ -51,7 +45,7 @@ function EpisodeGuide({ show, sections }) {
       <Text style={styles.nameShow}>{name}</Text>
       <SectionList
         renderItem={({ item }) => {
-          return <EpisodeItem showID={show.id} episode={item}></EpisodeItem>;
+          return <EpisodeItem showID={id} {...item}></EpisodeItem>;
         }}
         renderSectionHeader={({ section: { title } }) => {
           return <TitleSection title={title}></TitleSection>;
