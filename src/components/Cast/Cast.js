@@ -13,12 +13,12 @@ function Cast({ id, name, image }) {
   const selectPerson = useMemo(
     () => async () => {
       const service = TVMaze();
-      // const [err, res] = await service.episodeDetails(id);
-      // if (res) {
-      //   navigate('Person', { person: res });
-      // }
+      const [err, res] = await service.personDetails(id);
+      if (res) {
+        navigate('Person', { person: res });
+      }
     },
-    [id]
+    [id, navigate]
   );
 
   return (
