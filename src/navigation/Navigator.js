@@ -105,7 +105,7 @@ const Navigator = () => {
         component={HomeStack}
       />
       <Tab.Screen
-        options={() => {
+        options={({ route }) => {
           const navigationOptions = {
             tabBarLabel: 'Search',
             tabBarIcon: ({ focused }) => {
@@ -118,7 +118,8 @@ const Navigator = () => {
               );
             },
           };
-          const routeName = route.state?.routes?.[route.state.index].name ?? route.name;
+          const routeName =
+            route.state?.routes?.[route.state.index].name ?? route.name;
           if (routeName === 'Search') {
             navigationOptions.tabBarVisible = false;
           } else {
