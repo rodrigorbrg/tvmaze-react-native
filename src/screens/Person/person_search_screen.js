@@ -30,7 +30,7 @@ const Person = ({ route }) => {
         <View style={styles.photo}>
           <Image
             style={styles.image}
-            resizeMode={'contain'}
+            resizeMode={'cover'}
             defaultSource={require('../../assets/images/default-movie.png')}
             source={{
               uri: person?.image?.original,

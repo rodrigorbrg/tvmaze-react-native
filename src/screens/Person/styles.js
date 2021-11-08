@@ -27,7 +27,7 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.size.title,
     textAlign: 'left',
-    paddingVertical: 16,
+    paddingVertical: 8,
     paddingHorizontal: 8,
   },
   birthdate: {
@@ -40,6 +40,7 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.size.descrition,
     fontWeight: '600',
+    marginTop: 8,
     textAlign: 'left',
   },
   shows: {
