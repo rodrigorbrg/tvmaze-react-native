@@ -11,7 +11,9 @@ function EpisodeGuide({ id, name, image, premiered, ended, genres, summary, sect
   const [aired, setAired] = useState('');
 
   useEffect(() => {
-    setAired(formatPeriodDate(premiered, ended));
+    if (premiered && ended) {
+      setAired(formatPeriodDate(premiered, ended));
+    }
   }, [premiered, ended]);
   
   const _renderTopPage = () => {
