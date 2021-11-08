@@ -12,7 +12,7 @@
  import { NavigationContainer } from '@react-navigation/native';
  
  import Navigator from './src/navigation/Navigator';
- import Store from './src/store/storeConfig'
+ import Store from './src/store/storeConfig';
  
 export const navigationRef = React.createRef();
 

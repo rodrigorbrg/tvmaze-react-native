@@ -7,6 +7,5 @@ export default styles = StyleSheet.create({
   container: {
     backgroundColor: colors.background,
     flex: 1,
-    paddingHorizontal: 20,
   },
 });

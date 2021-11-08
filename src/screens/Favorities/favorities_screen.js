@@ -26,7 +26,7 @@ const Favorities = () => {
       <FlatList
         data={favorities}
         keyExtractor={(item) => {
-          return item.show.id;
+          return item.id;
         }}
         renderItem={({ item }) => (
           <ShowItem {...item} onPress={() => selectShow(item)} />

@@ -8,18 +8,20 @@ import { addFavoriteShow } from '../../store/actions/shows';
 
 import styles from './styles';
 
-function ShowItem({ id, image, name, genres, onPress }) {
-  //loadingIndicatorSource defaultSource
+function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress }) {
   const dispatch = useDispatch();
 
   const addToFavorities = () => {
-    const show = {
+    const showObj = {
       id,
       image,
       name,
-      genres
+      genres,
+      premiered,
+      ended,
+      summary
     }
-    dispatch(addFavoriteShow(show));
+    dispatch(addFavoriteShow(showObj));
   }
 
   return (

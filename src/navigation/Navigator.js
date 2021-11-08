@@ -42,6 +42,8 @@ const SearchStack = () => {
       }}
     >
       <Stack.Screen name='Search' component={Search} />
+      <Stack.Screen name='Show' component={Show} />
+      <Stack.Screen name='Episode' component={Episode} />
     </Stack.Navigator>
   );
 };
@@ -60,6 +62,8 @@ const FavoriteStack = () => {
         component={Favorities}
         options={{ animationEnabled: false }}
       />
+      <Stack.Screen name='Show' component={Show} />
+      <Stack.Screen name='Episode' component={Episode} />
     </Stack.Navigator>
   );
 };
