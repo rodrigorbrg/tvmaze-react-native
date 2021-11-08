@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Text, View, SectionList, FlatList, Image } from 'react-native';
 
+import TVMaze from '../../../../services/tvmaze';
 import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
