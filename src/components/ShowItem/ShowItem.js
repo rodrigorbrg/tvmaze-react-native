@@ -34,7 +34,6 @@ function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress,
         addToFavorities();
         break;
       case 'remove':
-        console.log('removing')
         removeToFavorities();
         break;
     }
