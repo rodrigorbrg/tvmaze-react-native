@@ -8,6 +8,8 @@ import Home from '../screens/Home';
 import Show from '../screens/Show';
 import Episode from '../screens/Episode';
 
+import Person from '../screens/Person';
+
 import Search from '../screens/Search';
 
 import Favorities from '../screens/Favorities';
@@ -27,6 +29,7 @@ const HomeStack = () => {
     >
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='Show' component={Show} />
+      <Stack.Screen name='Person' component={Person} />
       <Stack.Screen name='Episode' component={Episode} />
     </Stack.Navigator>
   );
@@ -115,6 +118,12 @@ const Navigator = () => {
               );
             },
           };
+          const routeName = route.state?.routes?.[route.state.index].name ?? route.name;
+          if (routeName === 'Search') {
+            navigationOptions.tabBarVisible = false;
+          } else {
+            navigationOptions.tabBarVisible = true;
+          }
           return navigationOptions;
         }}
         name='SearchStack'
