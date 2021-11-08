@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, Image, FlatList } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
 import TVMaze from '../../services/tvmaze';
 import Show from '../../components/Show';
@@ -8,9 +7,8 @@ import Show from '../../components/Show';
 import styles from './styles';
 
 const Person = ({ route }) => {
-  const [person, setPerson] = useState([]);
+  const [person, setPerson] = useState(null);
   const [shows, setShows] = useState([]);
-  const navigation = useNavigation();
 
   const getShows = async (id) => {
     const service = TVMaze();
@@ -21,8 +19,9 @@ const Person = ({ route }) => {
   };
 
   useEffect(() => {
-    setPerson(route.params.person);
-    getShows(route.params.person.id);
+    const personParam = route.params.person;
+    setPerson(personParam);
+    getShows(personParam.id);
   }, []);
 
   return (
