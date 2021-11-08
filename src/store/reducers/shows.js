@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
       if (!state.favorities.find((show) => show.id === action.payload.id)) {
         return {
           ...state,
-          favorities: aux.sort((a, b) => a.name.localeCompare(b.name)),
+          favorities: state.favorities.concat(action.payload).sort((a, b) => a.name.localeCompare(b.name)),
         };
       }
     case REMOVE_FAVORITE_SHOW:
