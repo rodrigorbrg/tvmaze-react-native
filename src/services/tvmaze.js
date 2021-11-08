@@ -35,6 +35,12 @@ export default TVMaze = () => {
     );
   };
 
+  const personDetails = async (id) => {
+    return await http.coreGet(
+      `/people/${id}`
+    );
+  };
+
   return {
     allShows,
     castShow,
@@ -44,6 +50,7 @@ export default TVMaze = () => {
     showSeasons,
     episodeList,
     episodeDetails,
+    personDetails,
   };
 };
 // Show {
