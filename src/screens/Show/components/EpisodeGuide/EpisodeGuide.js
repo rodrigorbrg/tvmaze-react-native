@@ -25,8 +25,8 @@ function EpisodeGuide({
   useEffect(() => {
     if (premiered && ended) {
       setAired(formatPeriodDate(premiered, ended));
-      getCast();
     }
+    getCast();
   }, [premiered, ended]);
 
   const getCast = useMemo(
