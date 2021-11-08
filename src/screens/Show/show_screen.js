@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
-
-import TVMaze from '../../services/tvmaze';
 
 import EpisodeGuide from './components/EpisodeGuide';
 import styles from './styles';

@@ -7,9 +7,5 @@ export default styles = StyleSheet.create({
     backgroundColor: colors.background,
     flex: 1,
     paddingHorizontal: 20,
-  },
-  cast: {
-    flex: 1,
-    alignContent: 'flex-end'
   }
 });
