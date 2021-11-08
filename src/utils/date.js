@@ -17,7 +17,6 @@ const formatYearDate = (date) => {
 };
 
 const formatPeriodDate = (started, ended) => {
-  console.log('formatPeriodDate', started, ended)
   return `${formatYearDate(started)} - ${formatYearDate(ended)}`;
 };
 
