@@ -35,6 +35,7 @@ const Episode = ({ route }) => {
         <Image
           style={{ width: imageWidth, height: imageHeight }}
           resizeMode={'contain'}
+          defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: episode?.image?.original,
           }}
