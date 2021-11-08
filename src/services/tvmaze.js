@@ -5,6 +5,10 @@ export default TVMaze = () => {
     return await http.coreGet(`/shows?page=${page}`);
   };
 
+  const castShow = async (id) => {
+    return await http.coreGet(`/shows/${id}/cast`);
+  };
+
   const searchShow = async (query) => {
     return await http.coreGet(`/search/shows?q=${query}`);
   };
@@ -33,6 +37,7 @@ export default TVMaze = () => {
 
   return {
     allShows,
+    castShow,
     searchShow,
     showDetails,
     showImages,
