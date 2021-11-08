@@ -41,7 +41,7 @@ const Home = () => {
         data={shows}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <ShowItem {...item} onPress={() => selectShow(item)} />
+          <ShowItem {...item} onPress={() => selectShow(item)} iconAction={'add'}/>
         )}
         onEndReached={loadMoreShows}
         onEndReachedThreshold={5}

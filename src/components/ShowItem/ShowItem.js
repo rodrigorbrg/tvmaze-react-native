@@ -4,11 +4,11 @@ import { useDispatch } from "react-redux";
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import colors from '../../styles/colors';
-import { addFavoriteShow } from '../../store/actions/shows';
+import { addFavoriteShow, removeFavoriteShow } from '../../store/actions/shows';
 
 import styles from './styles';
 
-function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress }) {
+function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress, iconAction }) {
   const dispatch = useDispatch();
 
   const addToFavorities = () => {
@@ -22,6 +22,22 @@ function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress 
       summary
     }
     dispatch(addFavoriteShow(showObj));
+  }
+
+  const removeToFavorities = () => {
+    dispatch(removeFavoriteShow(id));
+  }
+
+  const action = () => {
+    switch (iconAction) {
+      case 'add':
+        addToFavorities();
+        break;
+      case 'remove':
+        console.log('removing')
+        removeToFavorities();
+        break;
+    }
   }
 
   return (
@@ -39,7 +55,7 @@ function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress 
           <Text style={styles.genres}>{genres.map(item => item + ' ' )}</Text>
         </View>
         <Icon
-          onPress={addToFavorities}
+          onPress={action}
           style={styles.favorite}
           name={'star'}
           size={22}

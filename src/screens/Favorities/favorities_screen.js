@@ -29,7 +29,7 @@ const Favorities = () => {
           return item.id;
         }}
         renderItem={({ item }) => (
-          <ShowItem {...item} onPress={() => selectShow(item)} />
+          <ShowItem {...item} onPress={() => selectShow(item)} iconAction={'remove'}/>
         )}
       />
     </View>
