@@ -21,7 +21,7 @@ function EpisodeItem({ showID, name, season, number, rating, airdate }) {
         navigate('Episode', { episode: res });
       }
     },
-    [showID, season, number]
+    [showID, season, number, navigate]
   );
 
   return (
