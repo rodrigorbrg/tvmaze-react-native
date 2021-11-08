@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, SectionList, Image } from 'react-native';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Text, View, SectionList, FlatList, Image } from 'react-native';
 
+import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
 import { formatPeriodDate } from '../../../../utils/date';
@@ -18,12 +19,25 @@ function EpisodeGuide({
   sections,
 }) {
   const [aired, setAired] = useState('');
+  const [cast, setCast] = useState(null);
 
   useEffect(() => {
     if (premiered && ended) {
       setAired(formatPeriodDate(premiered, ended));
+      getCast();
     }
   }, [premiered, ended]);
+
+  const getCast = useMemo(
+    () => async () => {
+      const service = TVMaze();
+      const [err, res] = await service.castShow(id);
+      if (res) {
+        setCast(res);
+      }
+    },
+    [id, setCast]
+  );
 
   const _renderTopPage = () => {
     return (
@@ -51,6 +65,16 @@ function EpisodeGuide({
           </View>
         </View>
         <Text style={styles.summary}>{summary}</Text>
+        <FlatList
+          style={styles.cast}
+          data={cast}
+          removeClippedSubviews={true}
+          horizontal={true}
+          keyExtractor={({ person, character }) =>
+            character.id.toString() + person.id.toString()
+          }
+          renderItem={({ item }) => <Cast {...item.person} />}
+        />
       </View>
     );
   };
@@ -59,6 +83,9 @@ function EpisodeGuide({
     <View style={styles.container}>
       <Text style={styles.nameShow}>{name}</Text>
       <SectionList
+        contentContainerStyle={styles.sectionContainer}
+        style={styles.section}
+        sections={sections}
         renderItem={({ item }) => {
           return <EpisodeItem showID={id} {...item}></EpisodeItem>;
         }}
@@ -66,9 +93,7 @@ function EpisodeGuide({
           return <TitleSection title={title}></TitleSection>;
         }}
         ListHeaderComponent={_renderTopPage}
-        sections={sections}
-        keyExtractor={({ id }) => id.toString()}
-        styles={styles.section}
+        keyExtractor={({ id, name }) => id.toString() + name.toString()}
       />
     </View>
   );

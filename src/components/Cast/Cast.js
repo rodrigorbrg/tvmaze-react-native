@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { pure } from 'recompose';
@@ -10,13 +10,16 @@ import styles from './styles';
 function Cast({ id, name, image }) {
   const { navigate } = useNavigation();
 
-  const selectPerson = async () => {
-    const service = TVMaze();
-    // const [err, res] = await service.episodeDetails(idPerson);
-    // if (res) {
-    //   navigate('Episode', { episode: res });
-    // }
-  };
+  const selectPerson = useMemo(
+    () => async () => {
+      const service = TVMaze();
+      // const [err, res] = await service.episodeDetails(id);
+      // if (res) {
+      //   navigate('Person', { person: res });
+      // }
+    },
+    [id]
+  );
 
   return (
     <TouchableOpacity key={id} onPress={selectPerson}>

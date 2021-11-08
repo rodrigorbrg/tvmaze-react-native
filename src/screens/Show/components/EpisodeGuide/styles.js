@@ -5,7 +5,7 @@ import fonts from '../../../../styles/fonts';
 
 export default styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     marginBottom: 8,
   },
   nameShow: {
@@ -13,8 +13,14 @@ export default styles = StyleSheet.create({
     fontSize: fonts.size.font28,
     textAlign: 'left',
   },
+  cast: {
+    flex: 1,
+  },
   section: {
-    flexGrow: 1,
+    flex: 1,
+  },
+  sectionContainer: {
+    paddingBottom: 20,
   },
   headerPage: {
     flex: 1,
@@ -41,6 +47,7 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.size.font14,
     textAlign: 'left',
+    marginBottom: 8,
     width: '100%',
   },
   description: {

@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
 
 export default styles = StyleSheet.create({
   container: {
@@ -9,4 +8,8 @@ export default styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
   },
+  cast: {
+    flex: 1,
+    alignContent: 'flex-end'
+  }
 });

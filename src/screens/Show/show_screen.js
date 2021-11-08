@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { View } from 'react-native';
 
-import EpisodeGuide from './components/EpisodeGuide';
+import TVMaze from '../../services/tvmaze';
 
+import EpisodeGuide from './components/EpisodeGuide';
 import styles from './styles';
 
 const Show = ({ route }) => {
@@ -17,7 +18,7 @@ const Show = ({ route }) => {
 
   useEffect(() => {
     let seasonSection = [];
-    if (episodes) {
+    if (episodes && show) {
       episodes.map((episode) => {
         const season = seasonSection.find((section) => {
           return section.title === `Season ${episode.season}`;
@@ -33,13 +34,11 @@ const Show = ({ route }) => {
       });
       setSections(seasonSection);
     }
-  }, [episodes]);
+  }, [episodes, show]);
 
   return (
     <View style={styles.container}>
-      { sections ? 
-        <EpisodeGuide {...show} sections={sections} /> : null
-      }
+      {sections ? <EpisodeGuide {...show} sections={sections} /> : null}
     </View>
   );
 };
