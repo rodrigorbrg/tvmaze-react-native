@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, memo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { pure } from 'recompose';
 
 import TVMaze from '../../services/tvmaze';
 
@@ -38,4 +37,4 @@ function Cast({ id, name, image }) {
   );
 }
 
-export default pure(Cast);
+export default memo(Cast);

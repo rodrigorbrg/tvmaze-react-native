@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Text, View, Image, TouchableWithoutFeedback } from 'react-native';
 import { useDispatch } from "react-redux";
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -65,4 +65,4 @@ function ShowItem({ id, image, name, genres, premiered, ended, summary, onPress,
   );
 }
 
-export default ShowItem;
+export default memo(ShowItem);

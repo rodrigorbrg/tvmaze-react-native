@@ -1,6 +1,5 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import { pure } from 'recompose';
 
 import TVMaze from '../../services/tvmaze';
 
@@ -40,4 +39,4 @@ function Show({ _links }) {
   );
 }
 
-export default pure(Show);
+export default memo(Show);

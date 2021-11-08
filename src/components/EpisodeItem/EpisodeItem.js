@@ -1,6 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, memo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import { pure } from 'recompose';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import moment from 'moment';
@@ -44,4 +43,4 @@ function EpisodeItem({ showID, name, season, number, rating, airdate }) {
   );
 }
 
-export default pure(EpisodeItem);
+export default memo(EpisodeItem);
