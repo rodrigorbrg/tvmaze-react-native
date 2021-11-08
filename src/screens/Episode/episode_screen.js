@@ -42,7 +42,7 @@ const Episode = ({ route }) => {
         />
       </View>
       <View style={styles.information}>
-        <Text style={styles.nameShow}>{episode.name}</Text>
+        <Text style={styles.nameShow}>{episode?.name}</Text>
         <Text style={styles.season}>{`Season ${episode?.season}`}</Text>
         <Text style={styles.number}>{`Episode ${episode?.number}`}</Text>
         <Text style={styles.aired}>{`Aired ${formatDate(
