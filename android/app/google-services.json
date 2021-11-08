@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "243781936828",
+    "project_id": "tvmaze-rodrigorbrg",
+    "storage_bucket": "tvmaze-rodrigorbrg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243781936828:android:8f2ef4f396c79d946f12b9",
+        "android_client_info": {
+          "package_name": "com.tvmaze"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243781936828-nqhvjti0p79gd85q2m1rlqn9rilt396o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtDAES0rrpIrkg8oR3dgJtq7Zlddkipbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243781936828-nqhvjti0p79gd85q2m1rlqn9rilt396o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
