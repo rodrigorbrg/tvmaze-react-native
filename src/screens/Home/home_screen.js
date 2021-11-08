@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList } from 'react-native';
+import {
+  RefreshControl,
+  View,
+  FlatList,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import TVMaze from '../../services/tvmaze';
 import ShowItem from '../../components/ShowItem';
+import colors from '../../styles/colors';
 
 import styles from './styles';
 
 const Home = () => {
   const [shows, setShows] = useState([]);
   const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
   const service = TVMaze();
 
   const loadMoreShows = async () => {
+    setLoading(true);
     const [err, res] = await service.allShows(page);
+    setLoading(false);
     if (res) {
       setPage(page + 1);
       setShows(shows.concat(res));
@@ -41,10 +49,22 @@ const Home = () => {
         data={shows}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <ShowItem {...item} onPress={() => selectShow(item)} iconAction={'add'}/>
+          <ShowItem
+            {...item}
+            onPress={() => selectShow(item)}
+            iconAction={'add'}
+          />
         )}
         onEndReached={loadMoreShows}
         onEndReachedThreshold={5}
+        refreshControl={
+          <RefreshControl
+            refreshing={loading}
+            colors={[colors.primary]}
+            progressBackgroundColor={colors.transparent}
+            tintColor={colors.primary}
+          />
+        }
       />
     </View>
   );
