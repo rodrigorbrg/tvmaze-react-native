@@ -35,8 +35,7 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.size.title,
     textAlign: 'left',
-    marginStart: 10,
-    paddingVertical: 24,
+    paddingVertical: 16,
   },
   summary: {
     color: colors.white,
@@ -47,6 +46,7 @@ export default styles = StyleSheet.create({
   description: {
     color: colors.white,
     fontSize: fonts.size.font14,
+    flexWrap: 'wrap',
     textAlign: 'left',
     marginStart: 8,
     marginTop: 8,

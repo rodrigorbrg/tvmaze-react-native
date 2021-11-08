@@ -3,11 +3,20 @@ import { Text, View, SectionList, Image } from 'react-native';
 
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
-import { formatPeriodDate } from '../../../../utils/date'; 
+import { formatPeriodDate } from '../../../../utils/date';
 
 import styles from './styles';
 
-function EpisodeGuide({ id, name, image, premiered, ended, genres, summary, sections }) {
+function EpisodeGuide({
+  id,
+  name,
+  image,
+  premiered,
+  ended,
+  genres,
+  summary,
+  sections,
+}) {
   const [aired, setAired] = useState('');
 
   useEffect(() => {
@@ -15,7 +24,7 @@ function EpisodeGuide({ id, name, image, premiered, ended, genres, summary, sect
       setAired(formatPeriodDate(premiered, ended));
     }
   }, [premiered, ended]);
-  
+
   const _renderTopPage = () => {
     return (
       <View style={styles.container}>
@@ -31,7 +40,11 @@ function EpisodeGuide({ id, name, image, premiered, ended, genres, summary, sect
             />
           </View>
           <View>
-            <Text ellipsizeMode={'tail'} numberOfLines={2} style={styles.description}>
+            <Text
+              ellipsizeMode={'tail'}
+              numberOfLines={2}
+              style={styles.description}
+            >
               {'Genres: \n' + genres}
             </Text>
             <Text style={styles.aired}>{aired}</Text>
