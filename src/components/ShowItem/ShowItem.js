@@ -49,12 +49,12 @@ function ShowItem({
       summary,
     };
     dispatch(addFavoriteShow(showObj));
-    toastMsg('Show added to favorites')
+    toastMsg(`${name} added to favorites`)
   };
 
   const removeToFavorities = () => {
     dispatch(removeFavoriteShow(id));
-    toastMsg('Show deleted from favorites')
+    toastMsg(`${name} deleted from favorites`)
   };
 
   const action = () => {
