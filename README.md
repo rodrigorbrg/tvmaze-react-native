@@ -26,7 +26,7 @@ cd android
 ./gradlew app:assembleRelease
 ```
 
-## Generate Android Release .abb 
+## Generate Android Release .aab
 
 ```
 cd android
