@@ -33,6 +33,10 @@ cd android
 ./gradlew app:bundleRelease
 ```
 
+## Preview
+
+![preview](https://github.com/rodrigorbrg/tvmaze-react-native/blob/master/ScreenShot.png)
+
 ## How to install the app ##
 
 -> Firebase App Distribution
