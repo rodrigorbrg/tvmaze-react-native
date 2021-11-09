@@ -12,18 +12,20 @@ export default styles = StyleSheet.create({
   headerPage: {
     flex: 1.5,
     flexDirection: 'row',
-    height: '100%',
     width: '100%',
   },
   photo: {
     marginTop: 8,
   },
-  namePerson: {
+  description: {
+    flex: 1,
+  },
+  namePerson: { 
     color: colors.white,
     fontSize: fonts.size.title,
-    textAlign: 'left',
     paddingVertical: 8,
     paddingHorizontal: 8,
+    textAlign: 'left',
   },
   birthdate: {
     color: colors.white,

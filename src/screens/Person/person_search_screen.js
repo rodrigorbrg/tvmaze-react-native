@@ -37,8 +37,8 @@ const Person = ({ route }) => {
             width: 140,
           }}
         />
-        <View>
-          <Text style={styles.namePerson}>{person?.name}</Text>
+        <View style={styles.description}>
+          <Text numberOfLines={3} style={styles.namePerson}>{person?.name}</Text>
           <Text style={styles.birthdate}>
             {`Birthday: ${person?.birthday}`}
           </Text>
