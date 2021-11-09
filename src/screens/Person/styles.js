@@ -10,7 +10,8 @@ export default styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   headerPage: {
-    flex: 1.5,
+    // backgroundColor: colors.positive,
+    flex: 2,
     flexDirection: 'row',
     width: '100%',
   },
