@@ -3,6 +3,7 @@ import { Text, View, Image, FlatList } from 'react-native';
 
 import TVMaze from '../../services/tvmaze';
 import Show from '../../components/Show';
+import { formatDate } from '../../utils/date'; 
 
 import styles from './styles';
 
@@ -40,7 +41,7 @@ const Person = ({ route }) => {
         <View style={styles.description}>
           <Text numberOfLines={3} style={styles.namePerson}>{person?.name}</Text>
           <Text style={styles.birthdate}>
-            {`Birthday: ${person?.birthday}`}
+            {`Birthday: ${formatDate(person?.birthday)}`}
           </Text>
         </View>
       </View>
