@@ -1,6 +1,6 @@
 # tvmaze-react-native
 
-## To run, in root folder, run: ##
+## To run the project ##
 
 ## Installation
 
@@ -18,6 +18,24 @@ Android environment:
 ```
 react-native run-android
 ```
+
+## Generate Android Release .apk 
+
+```
+cd android
+./gradlew app:assembleRelease
+```
+
+## Generate Android Release .aab
+
+```
+cd android
+./gradlew app:bundleRelease
+```
+
+## Preview
+
+![preview](https://github.com/rodrigorbrg/tvmaze-react-native/blob/master/ScreenShot.png)
 
 ## How to install the app ##
 
