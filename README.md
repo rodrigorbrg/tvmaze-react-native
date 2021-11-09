@@ -1,6 +1,6 @@
 # tvmaze-react-native
 
-## To run, in root folder, run: ##
+## To run the project ##
 
 ## Installation
 
