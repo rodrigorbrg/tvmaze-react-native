@@ -20,26 +20,6 @@ const coreGet = async (path) => {
   }
 };
 
-const corePatch = async (path, body) => {
-  try {
-    let response = await appAPI.patch(`${path}`, body, defaultHeader);
-    return [null, response.data];
-  } catch (error) {
-    return [error, null];
-  }
-};
-
-const corePost = async (path, body) => {
-  try {
-    let response = await appAPI.post(`${path}`, body, defaultHeader);
-    return [null, response.data];
-  } catch (error) {
-    return [error, null];
-  }
-};
-
 export default {
-  coreGet,
-  corePatch,
-  corePost
+  coreGet
 }
