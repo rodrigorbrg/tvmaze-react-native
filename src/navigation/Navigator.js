@@ -18,14 +18,18 @@ import colors from '../styles/colors';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+const getScreenOptions = () => {
+  return {
+    headerStyle: { backgroundColor: colors.card },
+    headerTitleStyle: { color: colors.white },
+  }
+}
+
 const HomeStack = () => {
   return (
     <Stack.Navigator
       initialRouteName='Home'
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.card },
-        headerTitleStyle: { color: colors.white },
-      }}
+      screenOptions={getScreenOptions()}
     >
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='Show' component={Show} />
@@ -39,10 +43,7 @@ const SearchStack = () => {
   return (
     <Stack.Navigator
       initialRouteName='Search'
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.card },
-        headerTitleStyle: { color: colors.white },
-      }}
+      screenOptions={getScreenOptions()}
     >
       <Stack.Screen name='Search' component={Search} />
       <Stack.Screen name='Show' component={Show} />
@@ -56,10 +57,7 @@ const FavoriteStack = () => {
   return (
     <Stack.Navigator
       initialRouteName='Favorities'
-      screenOptions={{
-        headerStyle: { backgroundColor: colors.card },
-        headerTitleStyle: { color: colors.white },
-      }}
+      screenOptions={getScreenOptions()}
     >
       <Stack.Screen
         name='Favorities'

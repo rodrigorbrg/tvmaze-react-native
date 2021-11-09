@@ -2,24 +2,30 @@
 
 ## To run, in root folder, run: ##
 
-Step 1: 
+## Installation
+
+```
 npm install
-
-Step 2:
-
+```
 iOS environment:
-  cd ios
-  pod install 
-  cd ..
-  react-native run-ios
-
+```
+cd ios
+pod install 
+cd ..
+react-native run-ios
+```
 Android environment:
-    react-native run-android
+```
+react-native run-android
+```
 
 ## How to install the app ##
 
 -> Firebase App Distribution
+
+```
 https://appdistribution.firebase.dev/i/690d73d5a05f7ef7
+```
 
 Step 1: Sign in with Google to accept the invitation
 

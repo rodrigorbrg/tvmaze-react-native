@@ -16,15 +16,6 @@ export default styles = StyleSheet.create({
     paddingTop: 8,
     width: '100%',
   },
-  poster: {
-    height: 80,
-    width: 60,
-  },
-  image: {
-    resizeMode: 'contain',
-    width: '100%',
-    height: '100%',
-  },
   description: {
     flex: 4,
   },
