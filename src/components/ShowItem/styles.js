@@ -42,6 +42,6 @@ export default styles = StyleSheet.create({
   },
   favorite: {
     flex: 1,
-    // alignSelf: 'center',
+    padding: 8,
   }
 });

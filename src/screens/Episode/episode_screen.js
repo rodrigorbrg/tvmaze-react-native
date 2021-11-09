@@ -35,13 +35,14 @@ const Episode = ({ route }) => {
         <Image
           style={{ width: imageWidth, height: imageHeight }}
           resizeMode={'contain'}
+          defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: episode?.image?.original,
           }}
         />
       </View>
       <View style={styles.information}>
-        <Text style={styles.nameShow}>{episode.name}</Text>
+        <Text style={styles.nameShow}>{episode?.name}</Text>
         <Text style={styles.season}>{`Season ${episode?.season}`}</Text>
         <Text style={styles.number}>{`Episode ${episode?.number}`}</Text>
         <Text style={styles.aired}>{`Aired ${formatDate(

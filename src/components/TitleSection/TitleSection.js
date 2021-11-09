@@ -6,9 +6,7 @@ import styles from './styles';
 const TitleSectionView = ({ title }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.text}>{title}</Text>
-      </View>
+      <Text style={styles.text}>{title}</Text>
     </View>
   );
 };

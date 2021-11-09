@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 const formatDate = (date) => {
-  if (date) {
+  if (date && moment(new Date(date)).isValid()) {
     return moment(date).format('MM/DD/YYYY');
   } else {
     return '?';
@@ -9,8 +9,8 @@ const formatDate = (date) => {
 };
 
 const formatYearDate = (date) => {
-  if (date) {
-    return moment(date).format('YYYY');
+  if (date && moment(new Date(date)).isValid()) {
+    return moment(new Date(date)).format('YYYY');
   } else {
     return '?';
   }

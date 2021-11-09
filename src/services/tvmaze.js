@@ -5,6 +5,14 @@ export default TVMaze = () => {
     return await http.coreGet(`/shows?page=${page}`);
   };
 
+  const castShow = async (id) => {
+    return await http.coreGet(`/shows/${id}/cast`);
+  };
+
+  const castCredits = async (id) => {
+    return await http.coreGet(`/people/${id}/castcredits`);
+  };
+
   const searchShow = async (query) => {
     return await http.coreGet(`/search/shows?q=${query}`);
   };
@@ -31,14 +39,28 @@ export default TVMaze = () => {
     );
   };
 
+  const personDetails = async (id) => {
+    return await http.coreGet(
+      `/people/${id}`
+    );
+  };
+
+  const getHref = async (href) => {
+    return await http.coreGet(href);
+  };
+
   return {
     allShows,
+    castCredits,
+    castShow,
     searchShow,
     showDetails,
     showImages,
     showSeasons,
     episodeList,
     episodeDetails,
+    personDetails,
+    getHref,
   };
 };
 // Show {

@@ -13,6 +13,7 @@ export default styles = StyleSheet.create({
   },
   information: {
     paddingHorizontal: 20,
+    paddingBottom: 8,
     marginTop: 16,
   },
   aired: {

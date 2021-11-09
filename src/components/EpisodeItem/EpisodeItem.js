@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, memo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -12,17 +12,16 @@ import styles from './styles';
 function EpisodeItem({ showID, name, season, number, rating, airdate }) {
   const { navigate } = useNavigation();
 
-  const selectEpisode = async () => {
-    const service = TVMaze();
-    const [err, res] = await service.episodeDetails(
-      showID,
-      season,
-      number
-    );
-    if (res) {
-      navigate('Episode', { episode: res });
-    }
-  };
+  const selectEpisode = useMemo(
+    () => async () => {
+      const service = TVMaze();
+      const [err, res] = await service.episodeDetails(showID, season, number);
+      if (res) {
+        navigate('Episode', { episode: res });
+      }
+    },
+    [showID, season, number, navigate]
+  );
 
   return (
     <TouchableOpacity onPress={selectEpisode}>
@@ -44,4 +43,4 @@ function EpisodeItem({ showID, name, season, number, rating, airdate }) {
   );
 }
 
-export default EpisodeItem;
+export default memo(EpisodeItem);
