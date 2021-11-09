@@ -1,5 +1,21 @@
 # tvmaze-react-native
 
+To run, in root folder, run:
+
+Step 1: 
+npm install
+
+Step 2:
+
+iOS environment:
+  cd ios
+  pod install 
+  cd ..
+  react-native run-ios
+
+Android environment:
+    react-native run-android
+
 How to install the app
 
 -> Firebase App Distribution
