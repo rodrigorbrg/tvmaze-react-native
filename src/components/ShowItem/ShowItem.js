@@ -72,10 +72,11 @@ function ShowItem({
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <Image
-          style={styles.poster}
           resizeMode={'contain'}
           source={{
             uri: image?.medium,
+            height: 80,
+            width: 60,
           }}
         />
         <View style={styles.description}>

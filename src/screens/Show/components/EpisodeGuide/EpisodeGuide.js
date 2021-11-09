@@ -44,16 +44,15 @@ function EpisodeGuide({
     return (
       <View style={styles.container}>
         <View style={styles.headerPage}>
-          <View style={styles.poster}>
-            <Image
-              style={styles.image}
-              resizeMode={'contain'}
-              defaultSource={require('../../../../assets/images/default-movie.png')}
-              source={{
-                uri: image?.original,
-              }}
-            />
-          </View>
+          <Image
+            resizeMode={'contain'}
+            defaultSource={require('../../../../assets/images/default-movie.png')}
+            source={{
+              uri: image?.original,
+              height: 200,
+              width: 140,
+            }}
+          />
           <View>
             <Text
               ellipsizeMode={'tail'}

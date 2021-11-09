@@ -27,16 +27,16 @@ const Person = ({ route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerPage}>
-        <View style={styles.photo}>
-          <Image
-            style={styles.image}
-            resizeMode={'cover'}
-            defaultSource={require('../../assets/images/default-movie.png')}
-            source={{
-              uri: person?.image?.original,
-            }}
-          />
-        </View>
+        <Image
+          style={styles.photo}
+          resizeMode={'cover'}
+          defaultSource={require('../../assets/images/default-movie.png')}
+          source={{
+            uri: person?.image?.original,
+            height: 200,
+            width: 140,
+          }}
+        />
         <View>
           <Text style={styles.namePerson}>{person?.name}</Text>
           <Text style={styles.birthdate}>

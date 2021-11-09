@@ -29,14 +29,14 @@ export default styles = StyleSheet.create({
     width: '100%',
     marginBottom: 8,
   },
-  poster: {
-    height: 200,
-    width: '40%',
-  },
-  image: {
-    flex: 1,
-    height: '100%',
-  },
+  // poster: {
+  //   height: 200,
+  //   width: '40%',
+  // },
+  // image: {
+  //   flex: 1,
+  //   height: '100%',
+  // },
   nameShow: {
     color: colors.white,
     fontSize: fonts.size.title,

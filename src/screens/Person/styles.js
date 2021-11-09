@@ -10,18 +10,13 @@ export default styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   headerPage: {
-    flex: 2,
+    flex: 1.5,
     flexDirection: 'row',
     height: '100%',
     width: '100%',
   },
   photo: {
-    flex: 1,
-    width: '40%',
-  },
-  image: {
-    alignContent: 'flex-start',
-    height: '100%',
+    marginTop: 8,
   },
   namePerson: {
     color: colors.white,
@@ -40,7 +35,6 @@ export default styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.size.descrition,
     fontWeight: '600',
-    marginTop: 8,
     textAlign: 'left',
   },
   shows: {
