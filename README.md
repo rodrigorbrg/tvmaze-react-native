@@ -19,6 +19,20 @@ Android environment:
 react-native run-android
 ```
 
+## Generate Android Release .apk 
+
+```
+cd android
+./gradlew app:assembleRelease
+```
+
+## Generate Android Release .abb 
+
+```
+cd android
+./gradlew app:bundleRelease
+```
+
 ## How to install the app ##
 
 -> Firebase App Distribution
