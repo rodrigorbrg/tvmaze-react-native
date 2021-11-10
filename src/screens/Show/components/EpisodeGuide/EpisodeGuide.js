@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { Text, View, SectionList, FlatList, Image } from 'react-native';
 
 import TVMaze from '../../../../services/tvmaze';
@@ -22,13 +22,6 @@ function EpisodeGuide({
   const [aired, setAired] = useState('');
   const [cast, setCast] = useState(null);
 
-  useEffect(() => {
-    if (premiered && ended) {
-      setAired(formatPeriodDate(premiered, ended));
-    }
-    getCast();
-  }, [premiered, ended]);
-
   const getCast = useMemo(
     () => async () => {
       const service = TVMaze();
@@ -40,7 +33,14 @@ function EpisodeGuide({
     [id, setCast]
   );
 
-  const _renderTopPage = () => {
+  useEffect(() => {
+    if (premiered && ended) {
+      setAired(formatPeriodDate(premiered, ended));
+    }
+    getCast();
+  }, [premiered, ended]);
+
+  const _renderTopPage = useCallback(() => {
     return (
       <View style={styles.container}>
         <View style={styles.headerPage}>
@@ -77,7 +77,16 @@ function EpisodeGuide({
         />
       </View>
     );
-  };
+  }, [cast, aired]);
+
+  const _renderItem = useCallback(
+    ({ item }) => {
+      return <EpisodeItem showID={id} {...item}></EpisodeItem>;
+    },
+    [id]
+  );
+
+  const _keyExtractor = useCallback(({ id, name }) => id.toString(), []);
 
   return (
     <View style={styles.container}>
@@ -86,14 +95,12 @@ function EpisodeGuide({
         contentContainerStyle={styles.sectionContainer}
         style={styles.section}
         sections={sections}
-        renderItem={({ item }) => {
-          return <EpisodeItem showID={id} {...item}></EpisodeItem>;
-        }}
+        keyExtractor={_keyExtractor}
+        renderItem={_renderItem}
         renderSectionHeader={({ section: { title } }) => {
           return <TitleSection title={title}></TitleSection>;
         }}
         ListHeaderComponent={_renderTopPage}
-        keyExtractor={({ id, name }) => id.toString() + name.toString()}
       />
     </View>
   );
