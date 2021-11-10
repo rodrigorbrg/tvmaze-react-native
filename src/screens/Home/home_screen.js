@@ -10,7 +10,7 @@ import styles from './styles';
 
 const Home = () => {
   const { navigate } = useNavigation();
-  const { loadMoreShows, loading, shows } = useShows();
+  const { loadMoreShows, loadingShow, shows } = useShows();
 
   useEffect(() => {
     loadMoreShows();
@@ -42,7 +42,7 @@ const Home = () => {
         windowSize={11}
         refreshControl={
           <RefreshControl
-            refreshing={loading}
+            refreshing={loadingShow}
             colors={[colors.primary]}
             progressBackgroundColor={colors.transparent}
             tintColor={colors.primary}
