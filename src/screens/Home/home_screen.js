@@ -16,7 +16,7 @@ const Home = () => {
   const [shows, setShows] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
 
   const loadMoreShows = async () => {
     const service  = TVMaze();
@@ -34,7 +34,7 @@ const Home = () => {
   }, []);
 
   const selectShow = async (show) => {
-    navigation.navigate('Show', { show });
+    navigate('Show', { show });
   };
 
   return (
@@ -42,6 +42,7 @@ const Home = () => {
       <FlatList
         data={shows}
         keyExtractor={(item) => item.id}
+        removeClippedSubviews={true}
         renderItem={({ item }) => (
           <ShowItem
             {...item}
