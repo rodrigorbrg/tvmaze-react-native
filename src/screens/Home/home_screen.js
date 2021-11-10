@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {
-  RefreshControl,
-  View,
-  FlatList,
-} from 'react-native';
+import React, { useCallback, useState, useEffect } from 'react';
+import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import TVMaze from '../../services/tvmaze';
@@ -16,11 +12,10 @@ const Home = () => {
   const [shows, setShows] = useState([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
-  const navigation = useNavigation();
-
-  const service = TVMaze();
+  const { navigate } = useNavigation();
 
   const loadMoreShows = async () => {
+    const service = TVMaze();
     setLoading(true);
     const [err, res] = await service.allShows(page);
     setLoading(false);
@@ -35,28 +30,29 @@ const Home = () => {
   }, []);
 
   const selectShow = async (show) => {
-    const service = TVMaze();
-
-    const [err, res] = await service.episodeList(show.id);
-    if (res) {
-      navigation.navigate('Show', { show, episodes: res });
-    }
+    navigate('Show', { show });
   };
+
+  const _renderItem = useCallback(
+    ({ item }) => (
+      <ShowItem {...item} onPress={() => selectShow(item)} iconAction={'add'} />
+    ),
+    []
+  );
+
+  const _keyExtractor = useCallback((item) => item.id, []);
 
   return (
     <View style={styles.container}>
       <FlatList
         data={shows}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <ShowItem
-            {...item}
-            onPress={() => selectShow(item)}
-            iconAction={'add'}
-          />
-        )}
+        keyExtractor={_keyExtractor}
+        renderItem={_renderItem}
         onEndReached={loadMoreShows}
         onEndReachedThreshold={5}
+        removeClippedSubviews={true}
+        maxToRenderPerBatch={5}
+        windowSize={11}
         refreshControl={
           <RefreshControl
             refreshing={loading}
