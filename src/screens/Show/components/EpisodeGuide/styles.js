@@ -50,13 +50,15 @@ export default styles = StyleSheet.create({
     marginBottom: 8,
     width: '100%',
   },
-  description: {
+  genres: {
     color: colors.white,
     fontSize: fonts.size.font14,
-    flexWrap: 'wrap',
     textAlign: 'left',
     marginStart: 8,
     marginTop: 8,
+  },
+  description: {
+    flex: 1,
   },
   aired: {
     color: colors.white,

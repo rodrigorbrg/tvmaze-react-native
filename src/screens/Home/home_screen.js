@@ -1,29 +1,16 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import TVMaze from '../../services/tvmaze';
 import ShowItem from '../../components/ShowItem';
 import colors from '../../styles/colors';
+import { useShows } from '../../hooks/useShows';
 
 import styles from './styles';
 
 const Home = () => {
-  const [shows, setShows] = useState([]);
-  const [page, setPage] = useState(0);
-  const [loading, setLoading] = useState(false);
   const { navigate } = useNavigation();
-
-  const loadMoreShows = async () => {
-    const service = TVMaze();
-    setLoading(true);
-    const [err, res] = await service.allShows(page);
-    setLoading(false);
-    if (res) {
-      setPage(page + 1);
-      setShows(shows.concat(res));
-    }
-  };
+  const { loadMoreShows, loading, shows } = useShows();
 
   useEffect(() => {
     loadMoreShows();

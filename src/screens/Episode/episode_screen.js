@@ -33,11 +33,12 @@ const Episode = ({ route }) => {
     >
       <View>
         <Image
-          style={{ width: imageWidth, height: imageHeight }}
           resizeMode={'contain'}
           defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: episode?.image?.original,
+            width: imageWidth,
+            height: imageHeight,
           }}
         />
       </View>
