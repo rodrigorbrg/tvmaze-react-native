@@ -8,7 +8,14 @@ import styles from './styles';
 
 const Show = ({ route }) => {
   const [show, setShow] = useState(null);
-  const { loadEpisodes, loadCast, sections, cast } = useShows();
+  const {
+    loadEpisodes,
+    loadCast,
+    sections,
+    cast,
+    loadingEpisode,
+    loadingCast,
+  } = useShows();
 
   useEffect(() => {
     const showParam = route.params.show;
@@ -19,7 +26,13 @@ const Show = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <EpisodeGuide {...show} sections={sections} cast={cast} />
+      <EpisodeGuide
+        {...show}
+        sections={sections}
+        cast={cast}
+        loadingEpisode={loadingEpisode}
+        loadingCast={loadingCast}
+      />
     </View>
   );
 };

@@ -1,10 +1,11 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { Text, View, SectionList, FlatList, Image } from 'react-native';
+import { Text, View, SectionList, FlatList, Image, RefreshControl } from 'react-native';
 
 import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
 import { formatPeriodDate } from '../../../../utils/date';
+import colors from '../../../../styles/colors';
 
 import styles from './styles';
 
@@ -18,6 +19,8 @@ function EpisodeGuide({
   summary,
   sections,
   cast,
+  loadingEpisode,
+  loadingCast
 }) {
   const [aired, setAired] = useState('');
 
@@ -55,6 +58,14 @@ function EpisodeGuide({
           data={cast}
           removeClippedSubviews={true}
           horizontal={true}
+          refreshControl={
+            <RefreshControl
+              refreshing={loadingCast}
+              colors={[colors.primary]}
+              progressBackgroundColor={colors.transparent}
+              tintColor={colors.primary}
+            />
+          }
           keyExtractor={({ person, character }) =>
             character.id.toString() + person.id.toString()
           }
@@ -85,6 +96,14 @@ function EpisodeGuide({
         renderSectionHeader={({ section: { title } }) => {
           return <TitleSection title={title}></TitleSection>;
         }}
+        refreshControl={
+          <RefreshControl
+            refreshing={loadingEpisode}
+            colors={[colors.primary]}
+            progressBackgroundColor={colors.transparent}
+            tintColor={colors.primary}
+          />
+        }
         ListHeaderComponent={_renderTopPage}
       />
     </View>

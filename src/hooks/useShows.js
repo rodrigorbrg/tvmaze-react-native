@@ -8,14 +8,16 @@ export const useShows = () => {
   const [episodes, setEpisodes] = useState([]);
   const [sections, setSections] = useState([]);
   const [cast, setCast] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loadingShow, setLoadingShow] = useState(false);
+  const [loadingEpisode, setLoadingEpisode] = useState(false);
+  const [loadingCast, setLoadingCast] = useState(false);
   const [error, setError] = useState(null);
   const service = TVMaze();
 
   const loadMoreShows = useCallback(async () => {
-    setLoading(true);
+    setLoadingShow(true);
     const [err, res] = await service.allShows(page);
-    setLoading(false);
+    setLoadingShow(false);
     if (res) {
       setPage(page + 1);
       setShows(shows.concat(res));
@@ -45,7 +47,9 @@ export const useShows = () => {
   }, []);
 
   const loadEpisodes = useCallback(async (showId) => {
+    setLoadingEpisode(true);
     const [err, res] = await service.episodeList(showId);
+    setLoadingEpisode(false);
     if (res) {
       setEpisodes(res);
       createSections(res);
@@ -57,7 +61,9 @@ export const useShows = () => {
 
   const loadCast = useCallback(async (showId) => {
     const service = TVMaze();
+    setLoadingCast(true);
     const [err, res] = await service.castShow(showId);
+    setLoadingCast(false);
     if (res) {
       setCast(res);
     }
@@ -71,7 +77,9 @@ export const useShows = () => {
     episodes,
     sections,
     cast,
-    loading,
+    loadingShow,
+    loadingEpisode,
+    loadingCast,
     error,
     loadMoreShows,
     loadEpisodes,
