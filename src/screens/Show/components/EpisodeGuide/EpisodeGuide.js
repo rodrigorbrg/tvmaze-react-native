@@ -22,9 +22,7 @@ function EpisodeGuide({
   const [aired, setAired] = useState('');
 
   useEffect(() => {
-    if (premiered && ended) {
-      setAired(formatPeriodDate(premiered, ended));
-    }
+    setAired(formatPeriodDate(premiered, ended));
   }, [premiered, ended]);
 
   const _renderTopPage = useCallback(() => {
