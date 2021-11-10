@@ -38,11 +38,11 @@ function EpisodeGuide({
               width: 140,
             }}
           />
-          <View>
+          <View style={styles.description}>
             <Text
               ellipsizeMode={'tail'}
-              numberOfLines={2}
-              style={styles.description}
+              numberOfLines={3}
+              style={styles.genres}
             >
               {'Genres: \n' + genres}
             </Text>
