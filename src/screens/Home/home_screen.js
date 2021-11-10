@@ -18,9 +18,8 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
-  const service = TVMaze();
-
   const loadMoreShows = async () => {
+    const service  = TVMaze();
     setLoading(true);
     const [err, res] = await service.allShows(page);
     setLoading(false);
@@ -35,12 +34,7 @@ const Home = () => {
   }, []);
 
   const selectShow = async (show) => {
-    const service = TVMaze();
-
-    const [err, res] = await service.episodeList(show.id);
-    if (res) {
-      navigation.navigate('Show', { show, episodes: res });
-    }
+    navigation.navigate('Show', { show });
   };
 
   return (

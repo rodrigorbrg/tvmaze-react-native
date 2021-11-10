@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 
+import TVMaze from '../../services/tvmaze';
 import EpisodeGuide from './components/EpisodeGuide';
+
 import styles from './styles';
 
 const Show = ({ route }) => {
@@ -10,8 +12,16 @@ const Show = ({ route }) => {
   const [sections, setSections] = useState([]);
 
   useEffect(() => {
-    setShow(route.params.show);
-    setEpisodes(route.params.episodes);
+    const showParam = route.params.show;
+    setShow(showParam);
+    const getAllEpisodes = async () => {
+      const service = TVMaze();
+      const [err, res] = await service.episodeList(showParam.id);
+      if (res) {
+        setEpisodes(res);
+      }
+    };
+    getAllEpisodes();
   }, []);
 
   useEffect(() => {
@@ -36,7 +46,7 @@ const Show = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      {sections ? <EpisodeGuide {...show} sections={sections} /> : null}
+      <EpisodeGuide {...show} sections={sections} />
     </View>
   );
 };
