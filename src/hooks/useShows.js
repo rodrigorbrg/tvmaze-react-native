@@ -7,6 +7,7 @@ export const useShows = () => {
   const [shows, setShows] = useState([]);
   const [episodes, setEpisodes] = useState([]);
   const [sections, setSections] = useState([]);
+  const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const service = TVMaze();
@@ -24,10 +25,30 @@ export const useShows = () => {
     }
   }, []);
 
+  const createSections = useCallback((episodes) => {
+    let seasonSection = [];
+
+    episodes.map((episode) => {
+      const season = seasonSection.find((section) => {
+        return section.title === `Season ${episode.season}`;
+      });
+      if (season) {
+        season.data.push(episode);
+      } else {
+        seasonSection.push({
+          title: `Season ${episode.season}`,
+          data: [episode],
+        });
+      }
+    });
+    setSections(seasonSection);
+  }, []);
+
   const loadEpisodes = useCallback(async (showId) => {
     const [err, res] = await service.episodeList(showId);
     if (res) {
       setEpisodes(res);
+      createSections(res);
     }
     if (err) {
       setError(error);
@@ -45,30 +66,11 @@ export const useShows = () => {
     }
   }, []);
 
-  const createSections = useCallback((show) => {
-    let seasonSection = [];
-    if (episodes && show) {
-      episodes.map((episode) => {
-        const season = seasonSection.find((section) => {
-          return section.title === `Season ${episode.season}`;
-        });
-        if (season) {
-          season.data.push(episode);
-        } else {
-          seasonSection.push({
-            title: `Season ${episode.season}`,
-            data: [episode],
-          });
-        }
-      });
-      setSections(seasonSection);
-    }
-  }, []);
-
   return {
     shows,
     episodes,
     sections,
+    cast,
     loading,
     error,
     loadMoreShows,

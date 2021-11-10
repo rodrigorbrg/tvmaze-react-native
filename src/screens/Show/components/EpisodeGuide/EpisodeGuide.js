@@ -1,7 +1,6 @@
-import React, { useCallback, useState, useEffect, useMemo } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Text, View, SectionList, FlatList, Image } from 'react-native';
 
-import TVMaze from '../../../../services/tvmaze';
 import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
@@ -18,26 +17,14 @@ function EpisodeGuide({
   genres,
   summary,
   sections,
+  cast,
 }) {
   const [aired, setAired] = useState('');
-  const [cast, setCast] = useState(null);
-
-  const getCast = useMemo(
-    () => async () => {
-      const service = TVMaze();
-      const [err, res] = await service.castShow(id);
-      if (res) {
-        setCast(res);
-      }
-    },
-    [id, setCast]
-  );
 
   useEffect(() => {
     if (premiered && ended) {
       setAired(formatPeriodDate(premiered, ended));
     }
-    getCast();
   }, [premiered, ended]);
 
   const _renderTopPage = useCallback(() => {
@@ -86,7 +73,7 @@ function EpisodeGuide({
     [id]
   );
 
-  const _keyExtractor = useCallback(({ id, name }) => id.toString(), []);
+  const _keyExtractor = useCallback(({ id }) => id.toString(), []);
 
   return (
     <View style={styles.container}>
