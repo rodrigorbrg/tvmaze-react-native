@@ -11,7 +11,7 @@ type Props = {
   route: NavigationRoute,
 };
 
-const Episode: React.FC<Props> = ({
+const EpisodeScreen: React.FC<Props> = ({
   route
 }) => {
   const [episode, setEpisode] = useState<Episode>({} as Episode);
@@ -62,4 +62,4 @@ const Episode: React.FC<Props> = ({
   );
 };
 
-export default Episode;
+export default EpisodeScreen;
