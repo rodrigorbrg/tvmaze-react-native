@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Dimensions, ScrollView } from 'react-native';
-import { Text, View, Image } from 'react-native';
+import { Dimensions, Text, View, ScrollView, Image } from 'react-native';
+import { NavigationRoute } from 'react-navigation';
+import { Episode } from '../../types/Shows';
 
 import { formatDate } from '../../utils/date';
 
 import styles from './styles';
 
-const Episode = ({ route }) => {
-  const [episode, setEpisode] = useState({});
-  const [imageWidth, setImageWidth] = useState();
-  const [imageHeight, setImageHeight] = useState();
+type Props = {
+  route: NavigationRoute,
+};
+
+const Episode: React.FC<Props> = ({
+  route
+}) => {
+  const [episode, setEpisode] = useState<Episode>({} as Episode);
+  const [imageWidth, setImageWidth] = useState<number>();
+  const [imageHeight, setImageHeight] = useState<number>();
 
   useEffect(() => {
-    const ep = route.params.episode;
+    const ep = route?.params?.episode;
     setEpisode(ep);
     if (ep?.image?.original) {
       Image.getSize(ep?.image?.original, (width, height) => {
