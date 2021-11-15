@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
+import { NavigationRoute } from 'react-navigation';
 
 import EpisodeGuide from './components/EpisodeGuide';
 import { useShows } from '../../hooks/useShows';
+import { Show } from '../../types/Shows';
 
 import styles from './styles';
 
-const Show = ({ route }) => {
-  const [show, setShow] = useState(null);
+
+type Props = {
+  route: NavigationRoute,
+};
+
+const ShowScreen: React.FC<Props> = ({
+  route
+}) => {
+  const [show, setShow] = useState<Show>();
   const {
     loadEpisodes,
     loadCast,
@@ -18,7 +27,7 @@ const Show = ({ route }) => {
   } = useShows();
 
   useEffect(() => {
-    const showParam = route.params.show;
+    const showParam = route?.params?.show;
     setShow(showParam);
     loadEpisodes(showParam.id);
     loadCast(showParam.id);
@@ -37,4 +46,4 @@ const Show = ({ route }) => {
   );
 };
 
-export default Show;
+export default ShowScreen;

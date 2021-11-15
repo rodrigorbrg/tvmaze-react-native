@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Dimensions, Text, View, ScrollView, Image } from 'react-native';
 import { NavigationRoute } from 'react-navigation';
-import { Episode } from '../../types/Shows';
 
 import { formatDate } from '../../utils/date';
+import { Episode } from '../../types/Shows';
 
 import styles from './styles';
 

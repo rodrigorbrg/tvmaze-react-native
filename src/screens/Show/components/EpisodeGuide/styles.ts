@@ -3,15 +3,10 @@ import { StyleSheet } from 'react-native';
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
 
-export default styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flexGrow: 1,
     marginBottom: 8,
-  },
-  nameShow: {
-    color: colors.white,
-    fontSize: fonts.size.font28,
-    textAlign: 'left',
   },
   cast: {
     flex: 1,

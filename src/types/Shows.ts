@@ -1,4 +1,5 @@
 export interface Episode {
+  id: number,
   name: string,
   image: {
     original: string,
@@ -37,7 +38,7 @@ export interface Person {
   image: {
     original: string,
     medium: string,
-  }
+  },
   name: string,
   birthday: string,
 }

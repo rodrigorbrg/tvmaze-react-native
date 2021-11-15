@@ -1,5 +1,12 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { Text, View, SectionList, FlatList, Image, RefreshControl } from 'react-native';
+import {
+  Text,
+  View,
+  SectionList,
+  FlatList,
+  Image,
+  RefreshControl,
+} from 'react-native';
 
 import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
@@ -20,7 +27,22 @@ function EpisodeGuide({
   sections,
   cast,
   loadingEpisode,
-  loadingCast
+  loadingCast,
+}: {
+  id?: number,
+  name?: string;
+  image?: {
+    original: string,
+    medium: string,
+  };
+  premiered?: string;
+  ended?: string;
+  genres?: string;
+  summary?: string;
+  sections: any;
+  cast: any;
+  loadingEpisode: boolean;
+  loadingCast: boolean;
 }) {
   const [aired, setAired] = useState('');
 

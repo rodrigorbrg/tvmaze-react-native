@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NavigationScreenProp } from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
 import SearchBar from '../../components/SeachBar';
@@ -8,12 +9,13 @@ import ShowItem from '../../components/ShowItem';
 import colors from '../../styles/colors';
 
 import styles from './styles';
+import { Show } from '../../types/Shows';
 
-const Search = () => {
-  const [search, setSearch] = useState();
-  const [shows, setShows] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const { navigate } = useNavigation();
+const Search: React.FC = () => {
+  const [search, setSearch] = useState<string>();
+  const [shows, setShows] = useState<Show[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
 
   useEffect(() => {
     if (search) {
@@ -30,7 +32,7 @@ const Search = () => {
     }
   }, [search]);
 
-  const selectShow = async (show) => {
+  const selectShow = async (show: Show) => {
     navigate('Show', { show });
   };
 
