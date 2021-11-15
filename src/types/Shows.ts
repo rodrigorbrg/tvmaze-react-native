@@ -4,7 +4,7 @@ export interface Episode {
   image: {
     original: string,
     medium: string,
-  }
+  },
   season: number,
   number: number,
   airdate: string,
@@ -16,7 +16,7 @@ export interface Show {
   image: {
     original: string,
     medium: string,
-  }
+  },
   name: string,
   premiered: string,
   ended: string,

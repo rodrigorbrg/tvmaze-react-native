@@ -1,13 +1,25 @@
 import React, { useMemo, memo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NavigationScreenProp } from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
 
 import styles from './styles';
 
-function Cast({ id, name, image }) {
-  const { navigate } = useNavigation();
+function Cast({
+  id,
+  name,
+  image,
+}: {
+  id: number;
+  name: string;
+  image: {
+    original: string,
+    medium: string,
+  };
+}) {
+  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
 
   const selectPerson = useMemo(
     () => async () => {
@@ -28,7 +40,7 @@ function Cast({ id, name, image }) {
           resizeMode={'contain'}
           defaultSource={require('../../assets/images/default-movie.png')}
           source={{
-            uri: image?.medium,
+            uri: image.medium,
           }}
         />
         <Text style={styles.name}>{name}</Text>
