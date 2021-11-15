@@ -9,3 +9,16 @@ export interface Episode {
   airdate: string,
   summary: string,
 }
+
+export interface Show {
+  id: number,
+  image: {
+    original: string,
+    medium: string,
+  }
+  name: string,
+  premiered: string,
+  ended: string,
+  genres: string,
+  summary: string,
+}
