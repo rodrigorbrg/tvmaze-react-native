@@ -1,6 +1,7 @@
 import React, { useMemo, memo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NavigationScreenProp } from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import moment from 'moment';
 
@@ -9,8 +10,24 @@ import colors from '../../styles/colors';
 
 import styles from './styles';
 
-function EpisodeItem({ showID, name, season, number, rating, airdate }) {
-  const { navigate } = useNavigation();
+function EpisodeItem({
+  showID,
+  name,
+  season,
+  number,
+  rating,
+  airdate,
+}: {
+  showID: number;
+  name: string;
+  season: string;
+  number: number;
+  rating: {
+    average: number
+  };
+  airdate: string;
+}) {
+  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
 
   const selectEpisode = useMemo(
     () => async () => {

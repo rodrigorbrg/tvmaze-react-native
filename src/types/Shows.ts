@@ -7,6 +7,9 @@ export interface Episode {
   },
   season: number,
   number: number,
+  rating: {
+    average: number
+  };
   airdate: string,
   summary: string,
 }
