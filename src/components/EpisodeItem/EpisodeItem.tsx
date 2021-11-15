@@ -20,7 +20,7 @@ function EpisodeItem({
 }: {
   showID: number;
   name: string;
-  season: string;
+  season: number;
   number: number;
   rating: {
     average: number
