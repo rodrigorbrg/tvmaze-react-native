@@ -22,3 +22,22 @@ export interface Show {
   genres: string,
   summary: string,
 }
+
+export interface ShowReference {
+  id: number,
+  _links: {
+    show: {
+      href: string
+    },
+  }
+}
+
+export interface Person {
+  id: number,
+  image: {
+    original: string,
+    medium: string,
+  }
+  name: string,
+  birthday: string,
+}

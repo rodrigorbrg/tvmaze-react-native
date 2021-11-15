@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, Image, FlatList } from 'react-native';
+import { NavigationRoute } from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
-import Show from '../../components/Show';
+import ShowIcon from '../../components/ShowIcon';
 import { formatDate } from '../../utils/date'; 
+import { Person, ShowReference } from '../../types/Shows';
 
 import styles from './styles';
 
-const Person = ({ route }) => {
-  const [person, setPerson] = useState(null);
-  const [shows, setShows] = useState([]);
+type Props = {
+  route: NavigationRoute,
+};
 
-  const getShows = async (id) => {
+const PersonScreen: React.FC<Props> = ({
+  route
+}) => {
+  const [person, setPerson] = useState<Person>();
+  const [shows, setShows] = useState<ShowReference[]>([]);
+
+  const getShows = async (id: string) => {
     const service = TVMaze();
     const [err, res] = await service.castCredits(id);
     if (res) {
@@ -20,7 +28,7 @@ const Person = ({ route }) => {
   };
 
   useEffect(() => {
-    const personParam = route.params.person;
+    const personParam = route?.params?.person;
     setPerson(personParam);
     getShows(personParam.id);
   }, []);
@@ -52,11 +60,11 @@ const Person = ({ route }) => {
         removeClippedSubviews={true}
         horizontal={true}
         keyExtractor={({ _links }) => _links.show.href.toString()}
-        renderItem={({ item }) => <Show {...item} />}
+        renderItem={({ item }) => <ShowIcon {...item} />}
       />
       <View style={styles.view}></View>
     </View>
   );
 };
 
-export default Person;
+export default PersonScreen;

@@ -5,7 +5,7 @@ import TVMaze from '../../services/tvmaze';
 
 import styles from './styles';
 
-function Show({ _links }) {
+function ShowIcon({ _links }) {
   const [show, setShow] = useState([]);
 
   const getHref = async () => {
@@ -39,4 +39,4 @@ function Show({ _links }) {
   );
 }
 
-export default memo(Show);
+export default memo(ShowIcon);
