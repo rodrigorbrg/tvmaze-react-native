@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 
 import styles from './styles';
 
-const TitleSectionView = ({ title }) => {
+const TitleSectionView = ({ title }: { title: string }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>
