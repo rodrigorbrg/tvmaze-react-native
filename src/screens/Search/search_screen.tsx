@@ -12,7 +12,7 @@ import styles from './styles';
 import { Show } from '../../types/Shows';
 
 const Search: React.FC = () => {
-  const [search, setSearch] = useState<string>();
+  const [search, setSearch] = useState<string>('');
   const [shows, setShows] = useState<Show[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const { navigate } = useNavigation<NavigationScreenProp<any,any>>();

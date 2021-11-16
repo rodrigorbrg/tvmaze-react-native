@@ -11,7 +11,7 @@ const defaultHeader = {
   },
 };
 
-const coreGet = async (path) => {
+const coreGet = async (path: string) => {
   try {
     let response = await appAPI.get(`${path}`, defaultHeader);
     return [null, response.data];

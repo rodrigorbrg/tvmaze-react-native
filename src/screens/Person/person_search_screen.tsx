@@ -19,7 +19,7 @@ const PersonScreen: React.FC<Props> = ({
   const [person, setPerson] = useState<Person>();
   const [shows, setShows] = useState<ShowReference[]>([]);
 
-  const getShows = async (id: string) => {
+  const getShows = async (id: number) => {
     const service = TVMaze();
     const [err, res] = await service.castCredits(id);
     if (res) {

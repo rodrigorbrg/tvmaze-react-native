@@ -12,6 +12,8 @@ export interface Episode {
   };
   airdate: string,
   summary: string,
+  airstamp: string,
+  airtime: string,
 }
 
 export interface Show {
@@ -28,11 +30,13 @@ export interface Show {
 }
 
 export interface ShowReference {
-  id: number,
   _links: {
+    character: {
+      href: string
+    };
     show: {
       href: string
-    },
+    };
   }
 }
 
