@@ -1,17 +1,18 @@
 import { useCallback, useState } from 'react';
 
 import TVMaze from '../services/tvmaze';
+import { Episode, Person, Show } from '../types/Shows';
 
 export const useShows = () => {
-  const [page, setPage] = useState(0);
-  const [shows, setShows] = useState([]);
-  const [episodes, setEpisodes] = useState([]);
-  const [sections, setSections] = useState([]);
-  const [cast, setCast] = useState([]);
-  const [loadingShow, setLoadingShow] = useState(false);
-  const [loadingEpisode, setLoadingEpisode] = useState(false);
-  const [loadingCast, setLoadingCast] = useState(false);
-  const [error, setError] = useState(null);
+  const [page, setPage] = useState<number>(0);
+  const [shows, setShows] = useState<Show[]>([]);
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
+  const [sections, setSections] = useState<{ title: string; data: Episode[] }[]>([]);
+  const [cast, setCast] = useState<Person[]>([]);
+  const [loadingShow, setLoadingShow] = useState<boolean>(false);
+  const [loadingEpisode, setLoadingEpisode] = useState<boolean>(false);
+  const [loadingCast, setLoadingCast] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
   const service = TVMaze();
 
   const loadMoreShows = useCallback(async () => {
@@ -28,9 +29,12 @@ export const useShows = () => {
   }, []);
 
   const createSections = useCallback((episodes) => {
-    let seasonSection = [];
+    let seasonSection: {
+      title: string;
+      data: Episode[];
+    }[] = [];
 
-    episodes.map((episode) => {
+    episodes.map((episode: Episode) => {
       const season = seasonSection.find((section) => {
         return section.title === `Season ${episode.season}`;
       });
