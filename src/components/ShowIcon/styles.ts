@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
-export default styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     margin: 2,
     paddingTop: 8,
