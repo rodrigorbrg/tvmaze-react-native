@@ -37,7 +37,7 @@ function EpisodeGuide({
   };
   premiered?: string;
   ended?: string;
-  genres?: string;
+  genres?: string[];
   summary?: string;
   sections: any;
   cast: any;

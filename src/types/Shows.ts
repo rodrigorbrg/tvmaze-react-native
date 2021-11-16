@@ -23,7 +23,7 @@ export interface Show {
   name: string,
   premiered: string,
   ended: string,
-  genres: string,
+  genres: string[],
   summary: string,
 }
 
