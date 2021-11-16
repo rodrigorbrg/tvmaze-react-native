@@ -25,10 +25,23 @@ function ShowItem({
   summary,
   onPress,
   iconAction,
+}: {
+  id: string;
+  image: {
+    original: string;
+    medium: string;
+  };
+  name: string;
+  genres: string[];
+  premiered: string;
+  ended: string;
+  summary: string;
+  onPress: () => void;
+  iconAction: string;
 }) {
   const dispatch = useDispatch();
 
-  const toastMsg = (msg) => {
+  const toastMsg = (msg: string) => {
     if (Platform.OS === 'android') {
       ToastAndroid.showWithGravity(
         msg,
@@ -49,12 +62,12 @@ function ShowItem({
       summary,
     };
     dispatch(addFavoriteShow(showObj));
-    toastMsg(`${name} added to favorites`)
+    toastMsg(`${name} added to favorites`);
   };
 
   const removeToFavorities = () => {
     dispatch(removeFavoriteShow(id));
-    toastMsg(`${name} deleted from favorites`)
+    toastMsg(`${name} deleted from favorites`);
   };
 
   const action = () => {
