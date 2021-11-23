@@ -1,4 +1,4 @@
-import React, { useMemo, memo } from 'react';
+import React, { useCallback, memo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationScreenProp } from 'react-navigation';
@@ -15,22 +15,19 @@ function Cast({
   id: number;
   name: string;
   image: {
-    original: string,
-    medium: string,
+    original: string;
+    medium: string;
   };
 }) {
-  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
+  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
 
-  const selectPerson = useMemo(
-    () => async () => {
-      const service = TVMaze();
-      const [err, res] = await service.personDetails(id);
-      if (res) {
-        navigate('Person', { person: res });
-      }
-    },
-    [id, navigate]
-  );
+  const selectPerson = useCallback(async () => {
+    const service = TVMaze();
+    const [err, res] = await service.personDetails(id);
+    if (res) {
+      navigate('Person', { person: res });
+    }
+  }, [id, navigate]);
 
   return (
     <TouchableOpacity key={id} onPress={selectPerson}>

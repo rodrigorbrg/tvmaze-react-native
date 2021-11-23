@@ -1,4 +1,4 @@
-import React, { useMemo, memo } from 'react';
+import React, { useCallback, memo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationScreenProp } from 'react-navigation';
@@ -23,22 +23,19 @@ function EpisodeItem({
   season: number;
   number: number;
   rating: {
-    average: number
+    average: number;
   };
   airdate: string;
 }) {
   const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
 
-  const selectEpisode = useMemo(
-    () => async () => {
-      const service = TVMaze();
-      const [err, res] = await service.episodeDetails(showID, season, number);
-      if (res) {
-        navigate('Episode', { episode: res });
-      }
-    },
-    [showID, season, number, navigate]
-  );
+  const selectEpisode = useCallback(async () => {
+    const service = TVMaze();
+    const [err, res] = await service.episodeDetails(showID, season, number);
+    if (res) {
+      navigate('Episode', { episode: res });
+    }
+  }, [showID, season, number, navigate]);
 
   return (
     <TouchableOpacity onPress={selectEpisode}>
