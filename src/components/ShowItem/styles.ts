@@ -34,5 +34,5 @@ export default StyleSheet.create({
   favorite: {
     flex: 1,
     padding: 8,
-  }
+  },
 });

@@ -12,11 +12,11 @@ export default StyleSheet.create({
   },
   inputContainerStyle: {
     backgroundColor: colors.card,
-    borderRadius: 10
+    borderRadius: 10,
   },
   inputStyle: {
     backgroundColor: colors.card,
     color: colors.white,
     fontSize: fonts.size.font14,
-  }
-})
+  },
+});

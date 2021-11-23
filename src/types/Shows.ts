@@ -1,51 +1,51 @@
 export interface Episode {
-  id: number,
-  name: string,
+  id: number;
+  name: string;
   image: {
-    original: string,
-    medium: string,
-  },
-  season: number,
-  number: number,
-  rating: {
-    average: number
+    original: string;
+    medium: string;
   };
-  airdate: string,
-  summary: string,
-  airstamp: string,
-  airtime: string,
+  season: number;
+  number: number;
+  rating: {
+    average: number;
+  };
+  airdate: string;
+  summary: string;
+  airstamp: string;
+  airtime: string;
 }
 
 export interface Show {
-  id: number,
+  id: number;
   image: {
-    original: string,
-    medium: string,
-  },
-  name: string,
-  premiered: string,
-  ended: string,
-  genres: string[],
-  summary: string,
+    original: string;
+    medium: string;
+  };
+  name: string;
+  premiered: string;
+  ended: string;
+  genres: string[];
+  summary: string;
 }
 
 export interface ShowReference {
   _links: {
     character: {
-      href: string
+      href: string;
     };
     show: {
-      href: string
+      href: string;
     };
-  }
+  };
 }
 
 export interface Person {
-  id: number,
+  id: number;
   image: {
-    original: string,
-    medium: string,
-  },
-  name: string,
-  birthday: string,
+    original: string;
+    medium: string;
+  };
+  name: string;
+  birthday: string;
 }

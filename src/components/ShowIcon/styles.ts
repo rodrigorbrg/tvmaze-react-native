@@ -18,5 +18,5 @@ export default StyleSheet.create({
     fontSize: fonts.size.font12,
     textAlign: 'center',
     paddingVertical: 8,
-  }
+  },
 });

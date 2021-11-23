@@ -21,7 +21,7 @@ export default StyleSheet.create({
   description: {
     flex: 1,
   },
-  namePerson: { 
+  namePerson: {
     color: colors.white,
     fontSize: fonts.size.title,
     paddingVertical: 8,
@@ -45,6 +45,6 @@ export default StyleSheet.create({
     width: '100%',
   },
   view: {
-    flex: 1
+    flex: 1,
   },
 });

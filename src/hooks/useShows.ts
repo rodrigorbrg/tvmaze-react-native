@@ -7,7 +7,9 @@ export const useShows = () => {
   const [page, setPage] = useState<number>(0);
   const [shows, setShows] = useState<Show[]>([]);
   const [episodes, setEpisodes] = useState<Episode[]>([]);
-  const [sections, setSections] = useState<{ title: string; data: Episode[] }[]>([]);
+  const [sections, setSections] = useState<
+    { title: string; data: Episode[] }[]
+  >([]);
   const [cast, setCast] = useState<Person[]>([]);
   const [loadingShow, setLoadingShow] = useState<boolean>(false);
   const [loadingEpisode, setLoadingEpisode] = useState<boolean>(false);

@@ -14,7 +14,9 @@ const TVMaze = () => {
     return [err, res];
   };
 
-  const castCredits = async (id: number): Promise<ResponseType<ShowReference[]>> => {
+  const castCredits = async (
+    id: number,
+  ): Promise<ResponseType<ShowReference[]>> => {
     const [err, res] = await http.coreGet(`/people/${id}/castcredits`);
     return [err, res];
   };
@@ -29,17 +31,19 @@ const TVMaze = () => {
     return [err, res];
   };
 
-  const episodeDetails = async (id: number, season: number, number: number): Promise<ResponseType<Episode[]>> => {
+  const episodeDetails = async (
+    id: number,
+    season: number,
+    number: number,
+  ): Promise<ResponseType<Episode[]>> => {
     const [err, res] = await http.coreGet(
-      `shows/${id}/episodebynumber?season=${season}&number=${number}`
+      `shows/${id}/episodebynumber?season=${season}&number=${number}`,
     );
     return [err, res];
   };
 
   const personDetails = async (id: number): Promise<ResponseType<Person>> => {
-    const [err, res] = await http.coreGet(
-      `/people/${id}`
-    );
+    const [err, res] = await http.coreGet(`/people/${id}`);
     return [err, res];
   };
 

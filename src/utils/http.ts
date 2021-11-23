@@ -21,5 +21,5 @@ const coreGet = async (path: string) => {
 };
 
 export default {
-  coreGet
-}
+  coreGet,
+};

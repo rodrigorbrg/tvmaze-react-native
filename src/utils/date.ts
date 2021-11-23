@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-const formatDate = (date: string | undefined): string  => {
+const formatDate = (date: string | undefined): string => {
   if (date && moment(new Date(date)).isValid()) {
     return moment(date).format('MM/DD/YYYY');
   } else {
@@ -16,12 +16,11 @@ const formatYearDate = (date: string | undefined): string => {
   }
 };
 
-const formatPeriodDate = (started: string | undefined, ended: string | undefined): string  => {
+const formatPeriodDate = (
+  started: string | undefined,
+  ended: string | undefined,
+): string => {
   return `${formatYearDate(started)} - ${formatYearDate(ended)}`;
 };
 
-export {
-  formatDate,
-  formatYearDate,
-  formatPeriodDate,
-}
+export { formatDate, formatYearDate, formatPeriodDate };
