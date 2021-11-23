@@ -11,7 +11,7 @@ import { useShows } from '../../hooks/useShows';
 import styles from './styles';
 
 const Home: React.FC = () => {
-  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
+  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
   const { loadMoreShows, loadingShow, shows } = useShows();
 
   useEffect(() => {

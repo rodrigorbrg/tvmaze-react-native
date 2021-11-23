@@ -4,18 +4,16 @@ import { NavigationRoute } from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
 import ShowIcon from '../../components/ShowIcon';
-import { formatDate } from '../../utils/date'; 
+import { formatDate } from '../../utils/date';
 import { Person, ShowReference } from '../../types/Shows';
 
 import styles from './styles';
 
 type Props = {
-  route: NavigationRoute,
+  route: NavigationRoute;
 };
 
-const PersonScreen: React.FC<Props> = ({
-  route
-}) => {
+const PersonScreen: React.FC<Props> = ({ route }) => {
   const [person, setPerson] = useState<Person>();
   const [shows, setShows] = useState<ShowReference[]>([]);
 
@@ -47,7 +45,9 @@ const PersonScreen: React.FC<Props> = ({
           }}
         />
         <View style={styles.description}>
-          <Text numberOfLines={3} style={styles.namePerson}>{person?.name}</Text>
+          <Text numberOfLines={3} style={styles.namePerson}>
+            {person?.name}
+          </Text>
           <Text style={styles.birthdate}>
             {`Birthday: ${formatDate(person?.birthday)}`}
           </Text>

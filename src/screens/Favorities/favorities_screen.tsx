@@ -10,8 +10,10 @@ import { Show } from '../../types/Shows';
 import styles from './styles';
 
 const Favorities: React.FC = () => {
-  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
-  const favorities = useSelector(({ storage }: { storage: { favorities: Show[] }}) => storage.favorities);
+  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
+  const favorities = useSelector(
+    ({ storage }: { storage: { favorities: Show[] } }) => storage.favorities
+  );
 
   const selectShow = async (show: Show) => {
     navigate('Show', { show });

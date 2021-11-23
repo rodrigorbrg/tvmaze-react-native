@@ -8,14 +8,11 @@ import { Show } from '../../types/Shows';
 
 import styles from './styles';
 
-
 type Props = {
-  route: NavigationRoute,
+  route: NavigationRoute;
 };
 
-const ShowScreen: React.FC<Props> = ({
-  route
-}) => {
+const ShowScreen: React.FC<Props> = ({ route }) => {
   const [show, setShow] = useState<Show>();
   const {
     loadEpisodes,

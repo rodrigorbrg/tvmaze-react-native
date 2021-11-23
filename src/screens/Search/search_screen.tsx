@@ -15,7 +15,7 @@ const Search: React.FC = () => {
   const [search, setSearch] = useState<string>('');
   const [shows, setShows] = useState<Show[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
+  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
 
   useEffect(() => {
     if (search) {
