@@ -3,8 +3,7 @@ import http from '../utils/http';
 
 export type ResponseType<T> = [string, null] | [null, T];
 
-export default TVMaze = () => {
-  
+const TVMaze = () => {
   const allShows = async (page: number): Promise<ResponseType<Show[]>> => {
     const [err, res] = await http.coreGet(`/shows?page=${page}`);
     return [err, res];
@@ -60,3 +59,5 @@ export default TVMaze = () => {
     getHref,
   };
 };
+
+export default TVMaze;
