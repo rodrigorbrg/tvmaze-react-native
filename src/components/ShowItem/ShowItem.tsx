@@ -5,7 +5,7 @@ import {
   Image,
   Platform,
   ToastAndroid,
-  TouchableWithoutFeedback,
+  TouchableWithoutFeedback
 } from 'react-native';
 import { useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -24,9 +24,9 @@ function ShowItem({
   ended,
   summary,
   onPress,
-  iconAction,
+  iconAction
 }: {
-  id: string;
+  id: number;
   image: {
     original: string;
     medium: string;
@@ -59,7 +59,7 @@ function ShowItem({
       genres,
       premiered,
       ended,
-      summary,
+      summary
     };
     dispatch(addFavoriteShow(showObj));
     toastMsg(`${name} added to favorites`);
@@ -89,12 +89,12 @@ function ShowItem({
           source={{
             uri: image?.medium,
             height: 80,
-            width: 60,
+            width: 60
           }}
         />
         <View style={styles.description}>
           <Text style={styles.nameShow}>{name}</Text>
-          <Text style={styles.genres}>{genres.map((item) => item + ' ')}</Text>
+          <Text style={styles.genres}>{genres?.map((item) => item + ' ')}</Text>
         </View>
         <Icon
           onPress={action}

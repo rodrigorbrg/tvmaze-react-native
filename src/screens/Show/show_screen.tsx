@@ -8,14 +8,11 @@ import { Show } from '../../types/Shows';
 
 import styles from './styles';
 
-
 type Props = {
-  route: NavigationRoute,
+  route: NavigationRoute;
 };
 
-const ShowScreen: React.FC<Props> = ({
-  route
-}) => {
+const ShowScreen: React.FC<Props> = ({ route }) => {
   const [show, setShow] = useState<Show>();
   const {
     loadEpisodes,
@@ -23,15 +20,15 @@ const ShowScreen: React.FC<Props> = ({
     sections,
     cast,
     loadingEpisode,
-    loadingCast,
+    loadingCast
   } = useShows();
 
   useEffect(() => {
-    const showParam = route?.params?.show;
+    const showParam: Show = route?.params?.show;
     setShow(showParam);
-    loadEpisodes(showParam.id);
-    loadCast(showParam.id);
-  }, []);
+    void loadEpisodes(showParam.id);
+    void loadCast(showParam.id);
+  }, [route?.params?.show, loadEpisodes, loadCast]);
 
   return (
     <View style={styles.container}>

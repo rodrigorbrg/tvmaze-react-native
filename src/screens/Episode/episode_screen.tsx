@@ -8,18 +8,16 @@ import { Episode } from '../../types/Shows';
 import styles from './styles';
 
 type Props = {
-  route: NavigationRoute,
+  route: NavigationRoute;
 };
 
-const EpisodeScreen: React.FC<Props> = ({
-  route
-}) => {
+const EpisodeScreen: React.FC<Props> = ({ route }) => {
   const [episode, setEpisode] = useState<Episode>({} as Episode);
   const [imageWidth, setImageWidth] = useState<number>();
   const [imageHeight, setImageHeight] = useState<number>();
 
   useEffect(() => {
-    const ep = route?.params?.episode;
+    const ep: Episode = route?.params?.episode;
     setEpisode(ep);
     if (ep?.image?.original) {
       Image.getSize(ep?.image?.original, (width, height) => {
@@ -30,7 +28,7 @@ const EpisodeScreen: React.FC<Props> = ({
         setImageHeight(imageHeight);
       });
     }
-  }, []);
+  }, [route?.params?.episode]);
 
   return (
     <ScrollView
@@ -45,7 +43,7 @@ const EpisodeScreen: React.FC<Props> = ({
           source={{
             uri: episode?.image?.original,
             width: imageWidth,
-            height: imageHeight,
+            height: imageHeight
           }}
         />
       </View>

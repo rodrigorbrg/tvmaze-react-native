@@ -1,25 +1,29 @@
 # tvmaze-react-native
 
-## To run the project ##
+## To run the project
 
 ## Installation
 
 ```
 npm install
 ```
+
 iOS environment:
+
 ```
 cd ios
-pod install 
+pod install
 cd ..
 react-native run-ios
 ```
+
 Android environment:
+
 ```
 react-native run-android
 ```
 
-## Generate Android Release .apk 
+## Generate Android Release .apk
 
 ```
 cd android
@@ -37,7 +41,7 @@ cd android
 
 ![preview](https://github.com/rodrigorbrg/tvmaze-react-native/blob/master/ScreenShot.png)
 
-## How to install the app ##
+## How to install the app
 
 -> Firebase App Distribution
 

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { View, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
@@ -10,24 +10,29 @@ import { Show } from '../../types/Shows';
 import styles from './styles';
 
 const Favorities: React.FC = () => {
-  const { navigate } = useNavigation<NavigationScreenProp<any,any>>();
-  const favorities = useSelector(({ storage }: { storage: { favorities: Show[] }}) => storage.favorities);
+  const navigation = useNavigation<NavigationScreenProp<any, any>>();
+  const favorities = useSelector(
+    ({ storage }: { storage: { favorities: Show[] } }) => storage.favorities
+  );
 
-  const selectShow = async (show: Show) => {
-    navigate('Show', { show });
-  };
+  const selectShow = useCallback(
+    (show: Show): void => {
+      navigation.navigate('Show', { show });
+    },
+    [navigation]
+  );
 
-  const _keyExtractor = useCallback((item) => item.id, []);
+  const _keyExtractor = useMemo(() => (item: Show) => item.id.toString(), []);
 
   const _renderItem = useCallback(
-    ({ item }) => (
+    ({ item }: { item: Show }) => (
       <ShowItem
         {...item}
-        onPress={() => selectShow(item)}
+        onPress={(): void => selectShow(item)}
         iconAction={'remove'}
       />
     ),
-    []
+    [selectShow]
   );
 
   return (

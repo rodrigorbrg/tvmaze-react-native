@@ -9,13 +9,12 @@ import styles from './styles';
 
 function SeachBar({
   choice,
-  setChoice,
+  setChoice
 }: {
   choice: string;
   setChoice: (text: string) => void;
 }) {
-
-  const SafeSearchBar = (SearchBar as unknown) as React.FC<SearchBarBaseProps>;
+  const SafeSearchBar = SearchBar as unknown as React.FC<SearchBarBaseProps>;
   return (
     <SafeSearchBar
       platform="default"

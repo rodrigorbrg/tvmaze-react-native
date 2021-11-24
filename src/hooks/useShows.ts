@@ -1,14 +1,16 @@
 import { useCallback, useState } from 'react';
 
 import TVMaze from '../services/tvmaze';
-import { Episode, Person, Show } from '../types/Shows';
+import { Episode, CastType, Show } from '../types/Shows';
 
 export const useShows = () => {
   const [page, setPage] = useState<number>(0);
   const [shows, setShows] = useState<Show[]>([]);
   const [episodes, setEpisodes] = useState<Episode[]>([]);
-  const [sections, setSections] = useState<{ title: string; data: Episode[] }[]>([]);
-  const [cast, setCast] = useState<Person[]>([]);
+  const [sections, setSections] = useState<
+    { title: string; data: Episode[] }[]
+  >([]);
+  const [cast, setCast] = useState<CastType[]>([]);
   const [loadingShow, setLoadingShow] = useState<boolean>(false);
   const [loadingEpisode, setLoadingEpisode] = useState<boolean>(false);
   const [loadingCast, setLoadingCast] = useState<boolean>(false);
@@ -43,7 +45,7 @@ export const useShows = () => {
       } else {
         seasonSection.push({
           title: `Season ${episode.season}`,
-          data: [episode],
+          data: [episode]
         });
       }
     });
@@ -87,6 +89,6 @@ export const useShows = () => {
     error,
     loadMoreShows,
     loadEpisodes,
-    loadCast,
+    loadCast
   };
 };

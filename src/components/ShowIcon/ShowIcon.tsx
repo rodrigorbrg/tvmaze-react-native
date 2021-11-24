@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useCallback, useState, useEffect, memo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 import TVMaze from '../../services/tvmaze';
@@ -9,19 +9,19 @@ import styles from './styles';
 function ShowIcon({ _links }: { _links: { show: { href: string } } }) {
   const [show, setShow] = useState<Show>();
 
-  const getHref = async () => {
+  const getHref = useCallback(async () => {
     const service = TVMaze();
-    const [err, res] = await service.getHref(_links.show.href);
+    const [, res] = await service.getHref(_links.show.href);
     if (res) {
       setShow(res);
     }
-  };
+  }, [_links.show.href]);
 
   useEffect(() => {
     if (_links) {
-      getHref();
+      void getHref();
     }
-  }, [_links]);
+  }, [_links, getHref]);
 
   return (
     <TouchableOpacity key={show?.id}>
@@ -31,7 +31,7 @@ function ShowIcon({ _links }: { _links: { show: { href: string } } }) {
           resizeMode={'contain'}
           defaultSource={require('../../assets/images/default-movie.png')}
           source={{
-            uri: show?.image?.medium,
+            uri: show?.image?.medium
           }}
         />
         <Text style={styles.name}>{show?.name}</Text>

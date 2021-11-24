@@ -6,4 +6,3 @@ export const addFavoriteShow = (show) => {
 export const removeFavoriteShow = (id) => {
   return Creators.removeFavoriteShow(id);
 };
-

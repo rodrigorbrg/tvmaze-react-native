@@ -1,1 +1,1 @@
-export { default } from './EpisodeGuide'; 
+export { default } from './EpisodeGuide';

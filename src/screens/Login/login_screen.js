@@ -9,14 +9,9 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
-  return (
-    <View style={styles.container}>
-  
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
 
 export default Login;

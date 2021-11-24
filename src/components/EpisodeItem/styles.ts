@@ -12,28 +12,28 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingBottom: 8,
-    paddingTop: 8,
+    paddingTop: 8
   },
   group: {
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   episodeName: {
     color: colors.white,
     fontSize: fonts.size.descrition,
     fontWeight: '600',
     textAlign: 'left',
-    width: '100%',
+    width: '100%'
   },
   airdate: {
     color: colors.white,
     fontSize: fonts.size.font12,
     fontWeight: '300',
     textAlign: 'left',
-    width: '100%',
+    width: '100%'
   },
   rating: {
     color: colors.white,
-    fontSize: fonts.size.font12,
-  },
+    fontSize: fonts.size.font12
+  }
 });

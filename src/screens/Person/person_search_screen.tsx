@@ -4,34 +4,32 @@ import { NavigationRoute } from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
 import ShowIcon from '../../components/ShowIcon';
-import { formatDate } from '../../utils/date'; 
+import { formatDate } from '../../utils/date';
 import { Person, ShowReference } from '../../types/Shows';
 
 import styles from './styles';
 
 type Props = {
-  route: NavigationRoute,
+  route: NavigationRoute;
 };
 
-const PersonScreen: React.FC<Props> = ({
-  route
-}) => {
+const PersonScreen: React.FC<Props> = ({ route }) => {
   const [person, setPerson] = useState<Person>();
   const [shows, setShows] = useState<ShowReference[]>([]);
 
   const getShows = async (id: number) => {
     const service = TVMaze();
-    const [err, res] = await service.castCredits(id);
+    const [, res] = await service.castCredits(id);
     if (res) {
       setShows(res);
     }
   };
 
   useEffect(() => {
-    const personParam = route?.params?.person;
+    const personParam: Person = route?.params?.person;
     setPerson(personParam);
-    getShows(personParam.id);
-  }, []);
+    void getShows(personParam.id);
+  }, [route?.params?.person]);
 
   return (
     <View style={styles.container}>
@@ -43,11 +41,13 @@ const PersonScreen: React.FC<Props> = ({
           source={{
             uri: person?.image?.original,
             height: 200,
-            width: 140,
+            width: 140
           }}
         />
         <View style={styles.description}>
-          <Text numberOfLines={3} style={styles.namePerson}>{person?.name}</Text>
+          <Text numberOfLines={3} style={styles.namePerson}>
+            {person?.name}
+          </Text>
           <Text style={styles.birthdate}>
             {`Birthday: ${formatDate(person?.birthday)}`}
           </Text>
@@ -59,7 +59,9 @@ const PersonScreen: React.FC<Props> = ({
         data={shows}
         removeClippedSubviews={true}
         horizontal={true}
-        keyExtractor={({ _links }) => _links.show.href.toString()}
+        keyExtractor={({ _links }) =>
+          `${_links.show.href.toString()} ${_links.character.href.toString()}`
+        }
         renderItem={({ item }) => <ShowIcon {...item} />}
       />
       <View style={styles.view}></View>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { formatDate, formatYearDate, formatPeriodDate } from './date'; 
+import { formatDate, formatYearDate, formatPeriodDate } from './date';
 import http from './http';
 
 jest.mock('./http');
@@ -61,20 +61,18 @@ test('test invalid format date', () => {
   expect.assertions(1);
 });
 
-
 test('test successful http request', async () => {
   http.coreGet.mockResolvedValue([null, {}]);
-  
+
   const response = await http.coreGet('path');
 
   expect(response).toEqual([null, {}]);
   expect.assertions(1);
 });
 
-
 test('test error http request', async () => {
   http.coreGet.mockResolvedValue([{}, null]);
-  
+
   const response = await http.coreGet('path');
 
   expect(response).toEqual([{}, null]);

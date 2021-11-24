@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 8,
     flex: 1,
-    width: '100%',
+    width: '100%'
   },
   text: {
     color: colors.white,
-    fontSize: fonts.size.font14,
-  },
+    fontSize: fonts.size.font14
+  }
 });
 
 export default styles;

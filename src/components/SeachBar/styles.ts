@@ -8,7 +8,7 @@ export default StyleSheet.create({
     backgroundColor: colors.background,
     borderBottomColor: colors.background,
     borderTopColor: colors.card,
-    width: '100%',
+    width: '100%'
   },
   inputContainerStyle: {
     backgroundColor: colors.card,
@@ -17,6 +17,6 @@ export default StyleSheet.create({
   inputStyle: {
     backgroundColor: colors.card,
     color: colors.white,
-    fontSize: fonts.size.font14,
+    fontSize: fonts.size.font14
   }
-})
+});

@@ -1,1 +1,1 @@
-export { default } from './ShowItem'; 
+export { default } from './ShowItem';

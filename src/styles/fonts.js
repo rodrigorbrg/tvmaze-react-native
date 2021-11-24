@@ -17,6 +17,6 @@ export default {
     font48: 48,
     title: 22,
     descrition: 16,
-    button: 18,
-  },
+    button: 18
+  }
 };
