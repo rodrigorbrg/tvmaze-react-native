@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint --ext .tsx ./src/"
+    "lint": "eslint --ext .tsx ./src/",
+    "format": "prettier --check ./src"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.15.11",
@@ -48,7 +49,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.3.1",
     "metro-react-native-babel-preset": "^0.66.2",
-    "prettier": "2.4.1",
+    "prettier": "^2.4.1",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
   },

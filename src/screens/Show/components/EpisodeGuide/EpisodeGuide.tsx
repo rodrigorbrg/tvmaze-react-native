@@ -5,7 +5,7 @@ import {
   SectionList,
   FlatList,
   Image,
-  RefreshControl,
+  RefreshControl
 } from 'react-native';
 
 import Cast from '../../../../components/Cast';
@@ -27,13 +27,13 @@ function EpisodeGuide({
   sections,
   cast,
   loadingEpisode,
-  loadingCast,
+  loadingCast
 }: {
-  id?: number,
+  id?: number;
   name?: string;
   image?: {
-    original: string,
-    medium: string,
+    original: string;
+    medium: string;
   };
   premiered?: string;
   ended?: string;
@@ -60,7 +60,7 @@ function EpisodeGuide({
             source={{
               uri: image?.original,
               height: 200,
-              width: 140,
+              width: 140
             }}
           />
           <View style={styles.description}>

@@ -20,7 +20,7 @@ const ShowScreen: React.FC<Props> = ({ route }) => {
     sections,
     cast,
     loadingEpisode,
-    loadingCast,
+    loadingCast
   } = useShows();
 
   useEffect(() => {

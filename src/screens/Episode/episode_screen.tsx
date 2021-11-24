@@ -8,12 +8,10 @@ import { Episode } from '../../types/Shows';
 import styles from './styles';
 
 type Props = {
-  route: NavigationRoute,
+  route: NavigationRoute;
 };
 
-const EpisodeScreen: React.FC<Props> = ({
-  route
-}) => {
+const EpisodeScreen: React.FC<Props> = ({ route }) => {
   const [episode, setEpisode] = useState<Episode>({} as Episode);
   const [imageWidth, setImageWidth] = useState<number>();
   const [imageHeight, setImageHeight] = useState<number>();
@@ -45,7 +43,7 @@ const EpisodeScreen: React.FC<Props> = ({
           source={{
             uri: episode?.image?.original,
             width: imageWidth,
-            height: imageHeight,
+            height: imageHeight
           }}
         />
       </View>

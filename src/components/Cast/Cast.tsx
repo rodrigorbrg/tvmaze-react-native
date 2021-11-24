@@ -10,7 +10,7 @@ import styles from './styles';
 function Cast({
   id,
   name,
-  image,
+  image
 }: {
   id: number;
   name: string;
@@ -37,7 +37,7 @@ function Cast({
           resizeMode={'contain'}
           defaultSource={require('../../assets/images/default-movie.png')}
           source={{
-            uri: image.medium,
+            uri: image.medium
           }}
         />
         <Text style={styles.name}>{name}</Text>

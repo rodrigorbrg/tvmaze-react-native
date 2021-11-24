@@ -16,31 +16,17 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
     ecmaFeatures: {
-      'jsx': true
+      jsx: true,
     },
     ecmaVersion: 13,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'react', 'react-hooks', '@typescript-eslint', 'prettier'
-  ],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
-    indent: [
-      'error',
-      2, { "SwitchCase": 1 }
-    ],
-    'linebreak-style': [
-      'error',
-      'unix'
-    ],
-    quotes: [
-      'error',
-      'single'
-    ],
-    semi: [
-      'error',
-      'always'
-    ],
+    indent: ['error', 2, { SwitchCase: 1 }],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
     'prettier/prettier': 'error',
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'off',

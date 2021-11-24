@@ -31,7 +31,7 @@ function ShowIcon({ _links }: { _links: { show: { href: string } } }) {
           resizeMode={'contain'}
           defaultSource={require('../../assets/images/default-movie.png')}
           source={{
-            uri: show?.image?.medium,
+            uri: show?.image?.medium
           }}
         />
         <Text style={styles.name}>{show?.name}</Text>

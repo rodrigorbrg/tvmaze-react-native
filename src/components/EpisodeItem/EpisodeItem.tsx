@@ -16,7 +16,7 @@ function EpisodeItem({
   season,
   number,
   rating,
-  airdate,
+  airdate
 }: {
   showID: number;
   name: string;

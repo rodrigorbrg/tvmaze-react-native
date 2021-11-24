@@ -41,7 +41,7 @@ const PersonScreen: React.FC<Props> = ({ route }) => {
           source={{
             uri: person?.image?.original,
             height: 200,
-            width: 140,
+            width: 140
           }}
         />
         <View style={styles.description}>
