@@ -1,19 +1,20 @@
 import axios from 'axios';
+import { ResponseType } from '../services/tvmaze';
 
 const appAPI = axios.create({
   baseURL: 'https://api.tvmaze.com',
-  timeout: 60000,
+  timeout: 60000
 });
 
 const defaultHeader = {
   headers: {
-    'Content-Type': 'application/json',
-  },
+    'Content-Type': 'application/json'
+  }
 };
 
-const coreGet = async (path: string) => {
+const coreGet = async (path: string): Promise<ResponseType<any>> => {
   try {
-    let response = await appAPI.get(`${path}`, defaultHeader);
+    const response = await appAPI.get(`${path}`, defaultHeader);
     return [null, response.data];
   } catch (error) {
     return [error, null];
@@ -21,5 +22,5 @@ const coreGet = async (path: string) => {
 };
 
 export default {
-  coreGet,
+  coreGet
 };

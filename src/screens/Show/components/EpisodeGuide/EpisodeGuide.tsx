@@ -12,6 +12,7 @@ import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
 import { formatPeriodDate } from '../../../../utils/date';
+import { CastType } from '../../../../types/Shows';
 import colors from '../../../../styles/colors';
 
 import styles from './styles';
@@ -40,7 +41,7 @@ function EpisodeGuide({
   genres?: string[];
   summary?: string;
   sections: any;
-  cast: any;
+  cast: CastType[];
   loadingEpisode: boolean;
   loadingCast: boolean;
 }) {
@@ -69,7 +70,7 @@ function EpisodeGuide({
               numberOfLines={3}
               style={styles.genres}
             >
-              {'Genres: \n' + genres}
+              {`Genres: \n ${genres?.toString() || ''}`}
             </Text>
             <Text style={styles.aired}>{aired}</Text>
           </View>
@@ -88,14 +89,16 @@ function EpisodeGuide({
               tintColor={colors.primary}
             />
           }
-          keyExtractor={({ person, character }) =>
-            character.id.toString() + person.id.toString()
+          keyExtractor={({ person, character }: CastType) =>
+            `${character.id.toString()} ${person.id.toString()}`
           }
-          renderItem={({ item }) => <Cast {...item.person} />}
+          renderItem={({ item }: { item: CastType }) => (
+            <Cast {...item.person} />
+          )}
         />
       </View>
     );
-  }, [cast, aired]);
+  }, [cast, genres, image?.original, loadingCast, summary, aired]);
 
   const _renderItem = useCallback(
     ({ item }) => {
@@ -104,7 +107,10 @@ function EpisodeGuide({
     [id]
   );
 
-  const _keyExtractor = useCallback(({ id }) => id.toString(), []);
+  const _keyExtractor = useCallback(
+    ({ id }: { id: number }) => id.toString(),
+    []
+  );
 
   return (
     <View style={styles.container}>

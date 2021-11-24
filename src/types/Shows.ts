@@ -49,3 +49,13 @@ export interface Person {
   name: string;
   birthday: string;
 }
+
+export interface Character {
+  id: number;
+  name: string;
+}
+
+export interface CastType {
+  character: Character;
+  person: Person;
+}

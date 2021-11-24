@@ -19,15 +19,15 @@ function Cast({
     medium: string;
   };
 }) {
-  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation = useNavigation<NavigationScreenProp<any, any>>();
 
   const selectPerson = useCallback(async () => {
     const service = TVMaze();
-    const [err, res] = await service.personDetails(id);
+    const [, res] = await service.personDetails(id);
     if (res) {
-      navigate('Person', { person: res });
+      navigation.navigate('Person', { person: res });
     }
-  }, [id, navigate]);
+  }, [id, navigation]);
 
   return (
     <TouchableOpacity key={id} onPress={selectPerson}>

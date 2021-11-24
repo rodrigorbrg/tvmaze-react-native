@@ -1,4 +1,4 @@
-import { Episode, Person, Show, ShowReference } from '../types/Shows';
+import { CastType, Episode, Person, Show, ShowReference } from '../types/Shows';
 import http from '../utils/http';
 
 export type ResponseType<T> = [string, null] | [null, T];
@@ -9,19 +9,21 @@ const TVMaze = () => {
     return [err, res];
   };
 
-  const castShow = async (id: number): Promise<ResponseType<Person[]>> => {
+  const castShow = async (id: number): Promise<ResponseType<CastType[]>> => {
     const [err, res] = await http.coreGet(`/shows/${id}/cast`);
     return [err, res];
   };
 
   const castCredits = async (
-    id: number,
+    id: number
   ): Promise<ResponseType<ShowReference[]>> => {
     const [err, res] = await http.coreGet(`/people/${id}/castcredits`);
     return [err, res];
   };
 
-  const searchShow = async (query: string): Promise<ResponseType<Show[]>> => {
+  const searchShow = async (
+    query: string
+  ): Promise<ResponseType<{ show: Show }[]>> => {
     const [err, res] = await http.coreGet(`/search/shows?q=${query}`);
     return [err, res];
   };
@@ -34,10 +36,10 @@ const TVMaze = () => {
   const episodeDetails = async (
     id: number,
     season: number,
-    number: number,
+    number: number
   ): Promise<ResponseType<Episode[]>> => {
     const [err, res] = await http.coreGet(
-      `shows/${id}/episodebynumber?season=${season}&number=${number}`,
+      `shows/${id}/episodebynumber?season=${season}&number=${number}`
     );
     return [err, res];
   };
@@ -47,7 +49,7 @@ const TVMaze = () => {
     return [err, res];
   };
 
-  const getHref = async (href: string) => {
+  const getHref = async (href: string): Promise<ResponseType<Show>> => {
     const [err, res] = await http.coreGet(href);
     return [err, res];
   };
@@ -60,7 +62,7 @@ const TVMaze = () => {
     episodeList,
     episodeDetails,
     personDetails,
-    getHref,
+    getHref
   };
 };
 

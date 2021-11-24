@@ -26,7 +26,7 @@ function ShowItem({
   onPress,
   iconAction
 }: {
-  id: string;
+  id: number;
   image: {
     original: string;
     medium: string;
@@ -94,7 +94,7 @@ function ShowItem({
         />
         <View style={styles.description}>
           <Text style={styles.nameShow}>{name}</Text>
-          <Text style={styles.genres}>{genres.map((item) => item + ' ')}</Text>
+          <Text style={styles.genres}>{genres?.map((item) => item + ' ')}</Text>
         </View>
         <Icon
           onPress={action}

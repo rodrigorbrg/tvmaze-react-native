@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationScreenProp } from 'react-navigation';
@@ -13,40 +13,46 @@ import { Show } from '../../types/Shows';
 
 const Search: React.FC = () => {
   const [search, setSearch] = useState<string>('');
-  const [shows, setShows] = useState<Show[]>([]);
+  const [shows, setShows] = useState<{ show: Show }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation = useNavigation<NavigationScreenProp<any, any>>();
 
   useEffect(() => {
     if (search) {
       const service = TVMaze();
       const queryShows = async () => {
         setLoading(true);
-        const [err, res] = await service.searchShow(search);
+        const [, res] = await service.searchShow(search);
         setLoading(false);
         if (res) {
           setShows(res);
         }
       };
-      queryShows();
+      void queryShows();
     }
   }, [search]);
 
-  const selectShow = async (show: Show) => {
-    navigate('Show', { show });
-  };
+  const selectShow = useCallback(
+    (show: Show) => {
+      navigation.navigate('Show', { show });
+    },
+    [navigation]
+  );
 
-  const _keyExtractor = useCallback((item) => item.show.id, []);
+  const _keyExtractor = useMemo(
+    () => (item: { show: Show }) => item.show.id.toString(),
+    []
+  );
 
   const _renderItem = useCallback(
-    ({ item }) => (
+    ({ item }: { item: { show: Show } }) => (
       <ShowItem
         {...item.show}
         onPress={() => selectShow(item.show)}
         iconAction={'add'}
       />
     ),
-    []
+    [selectShow]
   );
 
   return (

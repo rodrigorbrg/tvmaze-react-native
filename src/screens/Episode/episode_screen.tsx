@@ -17,7 +17,7 @@ const EpisodeScreen: React.FC<Props> = ({ route }) => {
   const [imageHeight, setImageHeight] = useState<number>();
 
   useEffect(() => {
-    const ep = route?.params?.episode;
+    const ep: Episode = route?.params?.episode;
     setEpisode(ep);
     if (ep?.image?.original) {
       Image.getSize(ep?.image?.original, (width, height) => {
@@ -28,7 +28,7 @@ const EpisodeScreen: React.FC<Props> = ({ route }) => {
         setImageHeight(imageHeight);
       });
     }
-  }, []);
+  }, [route?.params?.episode]);
 
   return (
     <ScrollView

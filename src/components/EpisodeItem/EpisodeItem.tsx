@@ -27,15 +27,15 @@ function EpisodeItem({
   };
   airdate: string;
 }) {
-  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation = useNavigation<NavigationScreenProp<any, any>>();
 
   const selectEpisode = useCallback(async () => {
     const service = TVMaze();
-    const [err, res] = await service.episodeDetails(showID, season, number);
+    const [, res] = await service.episodeDetails(showID, season, number);
     if (res) {
-      navigate('Episode', { episode: res });
+      navigation.navigate('Episode', { episode: res });
     }
-  }, [showID, season, number, navigate]);
+  }, [showID, season, number, navigation]);
 
   return (
     <TouchableOpacity onPress={selectEpisode}>
@@ -48,7 +48,7 @@ function EpisodeItem({
         </View>
         {rating?.average ? (
           <Text style={styles.rating}>
-            {'Rate ' + rating?.average}
+            {`Rate ${rating?.average}`}
             <Icon name={'star'} size={12} color={colors.positive} />
           </Text>
         ) : null}

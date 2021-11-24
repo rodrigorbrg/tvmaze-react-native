@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationScreenProp } from 'react-navigation';
@@ -11,25 +11,28 @@ import { useShows } from '../../hooks/useShows';
 import styles from './styles';
 
 const Home: React.FC = () => {
-  const { navigate } = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation = useNavigation<NavigationScreenProp<any, any>>();
   const { loadMoreShows, loadingShow, shows } = useShows();
 
   useEffect(() => {
-    loadMoreShows();
-  }, []);
+    void loadMoreShows();
+  }, [loadMoreShows]);
 
-  const selectShow = async (show: Show) => {
-    navigate('Show', { show });
-  };
-
-  const _renderItem = useCallback(
-    ({ item }) => (
-      <ShowItem {...item} onPress={() => selectShow(item)} iconAction={'add'} />
-    ),
-    []
+  const selectShow = useCallback(
+    (show: Show) => {
+      navigation.navigate('Show', { show });
+    },
+    [navigation]
   );
 
-  const _keyExtractor = useCallback((item) => item.id, []);
+  const _renderItem = useCallback(
+    ({ item }: { item: Show }) => (
+      <ShowItem {...item} onPress={() => selectShow(item)} iconAction={'add'} />
+    ),
+    [selectShow]
+  );
+
+  const _keyExtractor = useMemo(() => (item: Show) => item.id.toString(), []);
 
   return (
     <View style={styles.container}>
