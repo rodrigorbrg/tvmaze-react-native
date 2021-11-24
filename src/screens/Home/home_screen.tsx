@@ -1,7 +1,11 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationScreenProp } from 'react-navigation';
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState
+} from 'react-navigation';
 
 import ShowItem from '../../components/ShowItem';
 import colors from '../../styles/colors';
@@ -11,7 +15,8 @@ import { useShows } from '../../hooks/useShows';
 import styles from './styles';
 
 const Home: React.FC = () => {
-  const navigation = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation =
+    useNavigation<NavigationScreenProp<NavigationState, NavigationParams>>();
   const { loadMoreShows, loadingShow, shows } = useShows();
 
   useEffect(() => {

@@ -1,7 +1,11 @@
 import React, { useCallback, memo } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationScreenProp } from 'react-navigation';
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState
+} from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
 
@@ -19,7 +23,8 @@ function Cast({
     medium: string;
   };
 }) {
-  const navigation = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation =
+    useNavigation<NavigationScreenProp<NavigationState, NavigationParams>>();
 
   const selectPerson = useCallback(async () => {
     const service = TVMaze();
