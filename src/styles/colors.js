@@ -15,5 +15,5 @@ export default {
 
   transparent: 'transparent',
   background: '#121212',
-  card: '#323232',
+  card: '#323232'
 };

@@ -18,7 +18,7 @@ const formatYearDate = (date: string | undefined): string => {
 
 const formatPeriodDate = (
   started: string | undefined,
-  ended: string | undefined,
+  ended: string | undefined
 ): string => {
   return `${formatYearDate(started)} - ${formatYearDate(ended)}`;
 };

@@ -14,25 +14,25 @@ export default StyleSheet.create({
     marginHorizontal: 16,
     paddingBottom: 8,
     paddingTop: 8,
-    width: '100%',
+    width: '100%'
   },
   description: {
-    flex: 4,
+    flex: 4
   },
   nameShow: {
     color: colors.white,
     fontSize: fonts.size.title,
     textAlign: 'left',
-    marginStart: 10,
+    marginStart: 10
   },
   genres: {
     color: colors.white,
     fontSize: fonts.size.descrition,
     textAlign: 'left',
-    marginStart: 10,
+    marginStart: 10
   },
   favorite: {
     flex: 1,
-    padding: 8,
-  },
+    padding: 8
+  }
 });

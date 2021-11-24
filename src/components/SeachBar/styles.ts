@@ -8,15 +8,15 @@ export default StyleSheet.create({
     backgroundColor: colors.background,
     borderBottomColor: colors.background,
     borderTopColor: colors.card,
-    width: '100%',
+    width: '100%'
   },
   inputContainerStyle: {
     backgroundColor: colors.card,
-    borderRadius: 10,
+    borderRadius: 10
   },
   inputStyle: {
     backgroundColor: colors.card,
     color: colors.white,
-    fontSize: fonts.size.font14,
-  },
+    fontSize: fonts.size.font14
+  }
 });
