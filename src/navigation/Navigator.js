@@ -21,20 +21,17 @@ const Tab = createBottomTabNavigator();
 const getScreenOptions = () => {
   return {
     headerStyle: { backgroundColor: colors.card },
-    headerTitleStyle: { color: colors.white },
-  }
-}
+    headerTitleStyle: { color: colors.white }
+  };
+};
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator
-      initialRouteName='Home'
-      screenOptions={getScreenOptions()}
-    >
-      <Stack.Screen name='Home' component={Home} />
-      <Stack.Screen name='Show' component={Show} />
-      <Stack.Screen name='Person' component={Person} />
-      <Stack.Screen name='Episode' component={Episode} />
+    <Stack.Navigator initialRouteName="Home" screenOptions={getScreenOptions()}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Show" component={Show} />
+      <Stack.Screen name="Person" component={Person} />
+      <Stack.Screen name="Episode" component={Episode} />
     </Stack.Navigator>
   );
 };
@@ -42,13 +39,13 @@ const HomeStack = () => {
 const SearchStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName='Search'
+      initialRouteName="Search"
       screenOptions={getScreenOptions()}
     >
-      <Stack.Screen name='Search' component={Search} />
-      <Stack.Screen name='Show' component={Show} />
-      <Stack.Screen name='Person' component={Person} />
-      <Stack.Screen name='Episode' component={Episode} />
+      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Show" component={Show} />
+      <Stack.Screen name="Person" component={Person} />
+      <Stack.Screen name="Episode" component={Episode} />
     </Stack.Navigator>
   );
 };
@@ -56,17 +53,17 @@ const SearchStack = () => {
 const FavoriteStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName='Favorities'
+      initialRouteName="Favorities"
       screenOptions={getScreenOptions()}
     >
       <Stack.Screen
-        name='Favorities'
+        name="Favorities"
         component={Favorities}
         options={{ animationEnabled: false }}
       />
-      <Stack.Screen name='Show' component={Show} />
-      <Stack.Screen name='Person' component={Person} />
-      <Stack.Screen name='Episode' component={Episode} />
+      <Stack.Screen name="Show" component={Show} />
+      <Stack.Screen name="Person" component={Person} />
+      <Stack.Screen name="Episode" component={Episode} />
     </Stack.Navigator>
   );
 };
@@ -74,7 +71,7 @@ const FavoriteStack = () => {
 const Navigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName='HomeStack'
+      initialRouteName="HomeStack"
       screenOptions={{
         // headerStyle: { backgroundColor: colors.card, height: 80 },
         // headerTitle: 'TV Maze',
@@ -82,7 +79,7 @@ const Navigator = () => {
         headerShown: false,
         tabBarStyle: { backgroundColor: colors.card },
         tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.white,
+        tabBarInactiveTintColor: colors.white
       }}
     >
       <Tab.Screen
@@ -97,11 +94,11 @@ const Navigator = () => {
                   color={focused ? colors.primary : colors.white}
                 />
               );
-            },
+            }
           };
           return navigationOptions;
         }}
-        name='HomeStack'
+        name="HomeStack"
         component={HomeStack}
       />
       <Tab.Screen
@@ -116,7 +113,7 @@ const Navigator = () => {
                   color={focused ? colors.primary : colors.white}
                 />
               );
-            },
+            }
           };
           const routeName =
             route.state?.routes?.[route.state.index].name ?? route.name;
@@ -127,7 +124,7 @@ const Navigator = () => {
           }
           return navigationOptions;
         }}
-        name='SearchStack'
+        name="SearchStack"
         component={SearchStack}
       />
       <Tab.Screen
@@ -142,11 +139,11 @@ const Navigator = () => {
                   color={focused ? colors.primary : colors.white}
                 />
               );
-            },
+            }
           };
           return navigationOptions;
         }}
-        name='FavoriteStack'
+        name="FavoriteStack"
         component={FavoriteStack}
       />
     </Tab.Navigator>
