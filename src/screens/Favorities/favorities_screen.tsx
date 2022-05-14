@@ -7,6 +7,7 @@ import {
   NavigationScreenProp,
   NavigationState
 } from 'react-navigation';
+import { FeedbackWidget } from '@rodrigorbrg/my-ui-components';
 
 import ShowItem from '../../components/ShowItem';
 import { Show } from '../../types/Shows';
@@ -42,11 +43,13 @@ const Favorities: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={favorities}
-        keyExtractor={_keyExtractor}
-        renderItem={_renderItem}
-      />
+      <FeedbackWidget>
+        <FlatList
+          data={favorities}
+          keyExtractor={_keyExtractor}
+          renderItem={_renderItem}
+        />
+      </FeedbackWidget>
     </View>
   );
 };
