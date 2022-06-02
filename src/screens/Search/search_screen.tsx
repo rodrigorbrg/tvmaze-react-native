@@ -1,7 +1,11 @@
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { RefreshControl, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationScreenProp } from 'react-navigation';
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState
+} from 'react-navigation';
 
 import TVMaze from '../../services/tvmaze';
 import SearchBar from '../../components/SeachBar';
@@ -15,7 +19,8 @@ const Search: React.FC = () => {
   const [search, setSearch] = useState<string>('');
   const [shows, setShows] = useState<{ show: Show }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const navigation = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation =
+    useNavigation<NavigationScreenProp<NavigationState, NavigationParams>>();
 
   useEffect(() => {
     if (search) {

@@ -1,5 +1,4 @@
-import React from 'react';
-
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { formatDate, formatYearDate, formatPeriodDate } from './date';
 import http from './http';
 

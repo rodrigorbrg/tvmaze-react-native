@@ -2,7 +2,12 @@ import React, { useCallback, useMemo } from 'react';
 import { View, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationScreenProp } from 'react-navigation';
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState
+} from 'react-navigation';
+import { FeedbackWidget } from '@rodrigorbrg/my-ui-components';
 
 import ShowItem from '../../components/ShowItem';
 import { Show } from '../../types/Shows';
@@ -10,7 +15,8 @@ import { Show } from '../../types/Shows';
 import styles from './styles';
 
 const Favorities: React.FC = () => {
-  const navigation = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation =
+    useNavigation<NavigationScreenProp<NavigationState, NavigationParams>>();
   const favorities = useSelector(
     ({ storage }: { storage: { favorities: Show[] } }) => storage.favorities
   );
@@ -37,11 +43,13 @@ const Favorities: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={favorities}
-        keyExtractor={_keyExtractor}
-        renderItem={_renderItem}
-      />
+      <FeedbackWidget>
+        <FlatList
+          data={favorities}
+          keyExtractor={_keyExtractor}
+          renderItem={_renderItem}
+        />
+      </FeedbackWidget>
     </View>
   );
 };

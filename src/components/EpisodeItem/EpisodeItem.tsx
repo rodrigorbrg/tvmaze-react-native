@@ -1,7 +1,11 @@
 import React, { useCallback, memo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NavigationScreenProp } from 'react-navigation';
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState
+} from 'react-navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
 import moment from 'moment';
 
@@ -27,7 +31,8 @@ function EpisodeItem({
   };
   airdate: string;
 }) {
-  const navigation = useNavigation<NavigationScreenProp<any, any>>();
+  const navigation =
+    useNavigation<NavigationScreenProp<NavigationState, NavigationParams>>();
 
   const selectEpisode = useCallback(async () => {
     const service = TVMaze();
