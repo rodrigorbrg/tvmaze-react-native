@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint --ext .tsx ./src/",
-    "format": "prettier --check ./src"
+    "format": "prettier --check ./src",
+    "typescript": "tsc --noEmit"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.15.11",
@@ -40,6 +41,7 @@
     "@babel/core": "^7.15.8",
     "@babel/runtime": "^7.15.4",
     "@react-native-community/eslint-config": "^3.0.1",
+    "@testing-library/react-native": "^9.1.0",
     "@types/jest": "^27.5.2",
     "@types/react": "^17.0.35",
     "@types/react-native": "^0.66.4",

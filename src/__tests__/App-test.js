@@ -4,19 +4,21 @@
 
 import 'react-native';
 import React from 'react';
-import renderer from 'react-test-renderer';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { render } from '@testing-library/react-native';
 
 import App from '../../App';
 
-// Note: test renderer must be required after react-native.
+describe('First test', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-it('renders correctly', () => {
-  renderer.create(<App />);
+  it('renders correctly', () => {
+    // renderer.create(<App />);
+    const { toJSON } = render(
+      <App/>
+    );
+  });
+
 });
 
-// it('checks if Async Storage is used', async () => {
-//   await asyncOperationOnAsyncStorage();
-
-//   expect(AsyncStorage.getItem).toBeCalledWith('myKey');
-// })

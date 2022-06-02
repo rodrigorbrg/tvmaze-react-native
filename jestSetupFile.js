@@ -20,5 +20,21 @@ jest.mock('react-native-reanimated', () => {
   return Reanimated;
 });
 
+jest.mock('react-native-view-shot', () => {
+  return {
+    // whatever function you want to mock, e.g capture: jest.fn()
+  };
+});
+
+jest.mock('redux-persist', () => {
+  const real = jest.requireActual('redux-persist');
+  return {
+    ...real,
+    persistReducer: jest
+      .fn()
+      .mockImplementation((config, reducers) => reducers),
+  };
+});
+
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
