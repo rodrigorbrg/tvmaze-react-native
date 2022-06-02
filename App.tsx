@@ -44,7 +44,7 @@ const theme = {
   }
 };
 
-export default App = () => {
+const App = () => {
   StatusBar.setBarStyle('light-content', false);
 
   return (
@@ -59,3 +59,5 @@ export default App = () => {
     </Provider>
   );
 };
+
+export default App;

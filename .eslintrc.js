@@ -13,6 +13,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking'
   ],
   parser: '@typescript-eslint/parser',
+  files: ['*.ts', '*.tsx'], // Your TypeScript files extension
   parserOptions: {
     project: './tsconfig.json',
     ecmaFeatures: {
