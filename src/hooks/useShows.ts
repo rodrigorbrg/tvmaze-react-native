@@ -15,9 +15,9 @@ export const useShows = () => {
   const [loadingEpisode, setLoadingEpisode] = useState<boolean>(false);
   const [loadingCast, setLoadingCast] = useState<boolean>(false);
   const [error, setError] = useState<string>();
-  const service = TVMaze();
 
   const loadMoreShows = useCallback(async () => {
+    const service = TVMaze();
     setLoadingShow(true);
     const [err, res] = await service.allShows(page);
     setLoadingShow(false);
@@ -26,12 +26,12 @@ export const useShows = () => {
       setShows(shows.concat(res));
     }
     if (err) {
-      setError(error);
+      setError(err);
     }
-  }, []);
+  }, [page, shows]);
 
-  const createSections = useCallback((episodes) => {
-    let seasonSection: {
+  const createSections = useCallback((episodes: Episode[]) => {
+    const seasonSection: {
       title: string;
       data: Episode[];
     }[] = [];
@@ -52,20 +52,24 @@ export const useShows = () => {
     setSections(seasonSection);
   }, []);
 
-  const loadEpisodes = useCallback(async (showId) => {
-    setLoadingEpisode(true);
-    const [err, res] = await service.episodeList(showId);
-    setLoadingEpisode(false);
-    if (res) {
-      setEpisodes(res);
-      createSections(res);
-    }
-    if (err) {
-      setError(error);
-    }
-  }, []);
+  const loadEpisodes = useCallback(
+    async (showId: number) => {
+      const service = TVMaze();
+      setLoadingEpisode(true);
+      const [err, res] = await service.episodeList(showId);
+      setLoadingEpisode(false);
+      if (res) {
+        setEpisodes(res);
+        createSections(res);
+      }
+      if (err) {
+        setError(err);
+      }
+    },
+    [createSections]
+  );
 
-  const loadCast = useCallback(async (showId) => {
+  const loadCast = useCallback(async (showId: number) => {
     const service = TVMaze();
     setLoadingCast(true);
     const [err, res] = await service.castShow(showId);
@@ -74,7 +78,7 @@ export const useShows = () => {
       setCast(res);
     }
     if (err) {
-      setError(error);
+      setError(err);
     }
   }, []);
 
