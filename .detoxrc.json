@@ -4,10 +4,10 @@
   "skipLegacyWorkersInjection": true,
   "apps": {
     "ios": {
-      "name": "WidgetFeedbackExample",
+      "name": "TVMaze",
       "type": "ios.app",
-      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/WidgetFeedbackExample.app",
-      "build": "xcodebuild -workspace ios/WidgetFeedbackExample.xcworkspace -scheme WidgetFeedbackExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=E54F0EF1-2816-4CA6-9432-66E59B3A108B"
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/TVMaze.app",
+      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=E54F0EF1-2816-4CA6-9432-66E59B3A108B"
     },
     "android.debug": {
       "type": "android.apk",
