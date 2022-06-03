@@ -7,7 +7,13 @@
       "name": "TVMaze",
       "type": "ios.app",
       "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/TVMaze.app",
-      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=E54F0EF1-2816-4CA6-9432-66E59B3A108B"
+      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=23ED3C31-826C-4C56-A5FF-B9A5B448D0E2"
+    },
+    "ios.release": {
+      "name": "TVMaze",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/TVMaze.app",
+      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -destination id=23ED3C31-826C-4C56-A5FF-B9A5B448D0E2"
     },
     "android.debug": {
       "type": "android.apk",
@@ -17,14 +23,14 @@
     "android.release": {
       "type": "android.apk",
       "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
-      "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd .."
+      "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=releaseE2E && cd .."
     }
   },
   "devices": {
     "simulator": {
       "type": "ios.simulator",
       "device": {
-        "type": "iPhone 13 Pro Max"
+        "type": "iPhone 12"
       }
     },
     "emulator": {
@@ -38,6 +44,10 @@
     "ios": {
       "device": "simulator",
       "app": "ios"
+    },
+    "ios.release": {
+      "device": "simulator",
+      "app": "ios.release"
     },
     "android.emu.debug": {
       "device": "emulator",
