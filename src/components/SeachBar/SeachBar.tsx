@@ -17,6 +17,7 @@ function SeachBar({
   const SafeSearchBar = SearchBar as unknown as React.FC<SearchBarBaseProps>;
   return (
     <SafeSearchBar
+      testID='searchBar'
       platform="default"
       containerStyle={styles.containerStyle}
       inputContainerStyle={styles.inputContainerStyle}

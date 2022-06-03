@@ -42,7 +42,7 @@ const Favorities: React.FC = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <View testID={"Favorities"} style={styles.container}>
       <FeedbackWidget>
         <FlatList
           data={favorities}

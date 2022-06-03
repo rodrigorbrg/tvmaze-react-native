@@ -82,7 +82,7 @@ function ShowItem({
   };
 
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback testID={name} onPress={onPress}>
       <View style={styles.container}>
         <Image
           resizeMode={'contain'}
@@ -97,6 +97,7 @@ function ShowItem({
           <Text style={styles.genres}>{genres?.map((item) => item + ' ')}</Text>
         </View>
         <Icon
+          testID='star'
           onPress={action}
           style={styles.favorite}
           name={'star'}

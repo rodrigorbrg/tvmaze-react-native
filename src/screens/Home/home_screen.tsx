@@ -40,9 +40,10 @@ const Home: React.FC = () => {
   const _keyExtractor = useMemo(() => (item: Show) => item.id.toString(), []);
 
   return (
-    <View style={styles.container}>
+    <View testID={"Home"} style={styles.container}>
       <FlatList
         data={shows}
+        testID={"movieList"}
         keyExtractor={_keyExtractor}
         renderItem={_renderItem}
         onEndReached={loadMoreShows}

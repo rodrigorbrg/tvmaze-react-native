@@ -86,6 +86,8 @@ const Navigator = () => {
         options={() => {
           const navigationOptions = {
             tabBarLabel: 'Home',
+            tabBarAccessibilityLabel: 'HomeTab',
+            tabBarTestID: 'HomeTab',
             tabBarIcon: ({ focused }) => {
               return (
                 <Movie
@@ -105,6 +107,8 @@ const Navigator = () => {
         options={({ route }) => {
           const navigationOptions = {
             tabBarLabel: 'Search',
+            tabBarAccessibilityLabel: 'SearchTab',
+            tabBarTestID: 'SearchTab',
             tabBarIcon: ({ focused }) => {
               return (
                 <Icon
@@ -131,6 +135,8 @@ const Navigator = () => {
         options={() => {
           const navigationOptions = {
             tabBarLabel: 'Favorities',
+            tabBarAccessibilityLabel: 'FavoritiesTab',
+            tabBarTestID: 'FavoritiesTab',
             tabBarIcon: ({ focused }) => {
               return (
                 <Icon
