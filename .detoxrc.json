@@ -7,13 +7,13 @@
       "name": "TVMaze",
       "type": "ios.app",
       "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/TVMaze.app",
-      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination id=23ED3C31-826C-4C56-A5FF-B9A5B448D0E2"
+      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=15.2'"
     },
     "ios.release": {
       "name": "TVMaze",
       "type": "ios.app",
       "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/TVMaze.app",
-      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -destination id=23ED3C31-826C-4C56-A5FF-B9A5B448D0E2"
+      "build": "xcodebuild -workspace ios/tvmaze.xcworkspace -scheme tvmaze -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=15.2'"
     },
     "android.debug": {
       "type": "android.apk",
