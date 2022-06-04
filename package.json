@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "react-native start --reset-cache",
     "test": "jest",
     "detox:build": "detox build",
     "detox:test": "detox test",

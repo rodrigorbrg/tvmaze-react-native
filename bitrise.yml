@@ -45,13 +45,6 @@ workflows:
             - source_root_path: '$WORKDIR/ios'
       - script@1:
           inputs:
-            - content: |-
-                #!/usr/bin/env bash
-
-                react-native start --reset-cache &
-          is_always_run: true
-      - script@1:
-          inputs:
             - working_dir: '$WORKDIR'
             - content: |-
                 #!/bin/bash
