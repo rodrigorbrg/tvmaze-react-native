@@ -1,0 +1,116 @@
+---
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: react-native
+workflows:
+  primary:
+    description: |
+      Runs tests.
+
+      Next steps:
+      - Check out [Getting started with React Native apps](https://devcenter.bitrise.io/en/getting-started/getting-started-with-react-native-apps.html).
+    steps:
+      - activate-ssh-key@4: {}
+      - git-clone@6: {}
+      - npm@1:
+          inputs:
+            - workdir: '$WORKDIR'
+            - command: install
+      - npm@1:
+          inputs:
+            - workdir: '$WORKDIR'
+            - command: test
+      - npm@1:
+          inputs:
+            - workdir: '$WORKDIR'
+            - command: install -g detox-cli
+      - npm@1:
+          inputs:
+            - workdir: '$WORKDIR'
+            - command: install -g react-native-cli
+      - avd-manager@1:
+          inputs:
+            - api_level: '30'
+            - emulator_id: Pixel_4_API_31
+            - profile: pixel_4
+            - create_command_flags: '--sdcard 1024M'
+            - tag: google_apis_playstore
+      - wait-for-android-emulator@1:
+          inputs:
+            - boot_timeout: '240'
+          is_always_run: true
+      - cocoapods-install@2:
+          is_always_run: true
+          inputs:
+            - source_root_path: '$WORKDIR/ios'
+      - script@1:
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+
+                react-native start --reset-cache &
+          is_always_run: true
+      - script@1:
+          inputs:
+            - working_dir: '$WORKDIR'
+            - content: |-
+                #!/bin/bash
+
+                brew tap wix/brew
+                brew install applesimutils
+                detox build --configuration ios
+                detox test --configuration ios --cleanup
+          title: Install Detox Test
+          is_always_run: true
+      - install-missing-android-tools@3:
+          inputs:
+            - ndk_version: 21.4.7075529
+          is_always_run: true
+      - android-build@1:
+          inputs:
+            - variant: '$VARIANT'
+            - project_location: '$PROJECT_LOCATION'
+            - module: '$MODULE'
+          is_always_run: true
+      - deploy-to-bitrise-io@2:
+          inputs:
+            - zip_name: tvmaze
+            - debug_mode: 'true'
+            - deploy_path: '$BITRISE_APK_PATH'
+            - is_compress: 'true'
+meta:
+  bitrise.io:
+    stack: osx-xcode-13.2.x
+    machine_type_id: g2.4core
+app:
+  envs:
+    - opts:
+        is_expand: false
+      WORKDIR: '.'
+    - opts:
+        is_expand: false
+      PROJECT_LOCATION: android
+    - opts:
+        is_expand: false
+      MODULE: app
+    - opts:
+        is_expand: false
+      VARIANT: Release
+    - opts:
+        is_expand: false
+      BITRISE_PROJECT_PATH: ios/tvmaze.xcworkspace
+    - opts:
+        is_expand: false
+      BITRISE_SCHEME: tvmaze
+    - opts:
+        is_expand: false
+      BITRISE_DISTRIBUTION_METHOD: development
+    - opts:
+        is_expand: false
+      GRADLEW_PATH: android/gradlew
+    - opts:
+        is_expand: false
+      MODULE: app
+trigger_map:
+  - push_branch: master
+    workflow: primary
