@@ -9,7 +9,7 @@
     "start": "react-native start --reset-cache",
     "test": "jest",
     "android:detox:build": "detox build --configuration android.emu.debug -l verbose",
-    "android:detox:test": "detox test --configuration android.emu.release -l verbose",
+    "android:detox:test": "detox test --configuration android.emu.debug -l verbose",
     "ios:detox:build": "detox build --configuration ios -l verbose",
     "ios:detox:test": "detox test --configuration ios -l verbose",
     "lint": "eslint --ext .tsx ./src/",
