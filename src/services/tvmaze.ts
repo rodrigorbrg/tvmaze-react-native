@@ -5,7 +5,9 @@ export type ResponseType<T> = [string, null] | [null, T];
 
 const TVMaze = () => {
   const allShows = async (page: number): Promise<ResponseType<Show[]>> => {
+    console.log('REQ', `/shows?page=${page}`)
     const [err, res] = await http.coreGet(`/shows?page=${page}`);
+    console.log(JSON.stringify(err))
     return [err, res];
   };
 

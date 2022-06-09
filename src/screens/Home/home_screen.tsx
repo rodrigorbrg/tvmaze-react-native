@@ -21,7 +21,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     void loadMoreShows();
-  }, [loadMoreShows]);
+  }, []);
 
   const selectShow = useCallback(
     (show: Show) => {

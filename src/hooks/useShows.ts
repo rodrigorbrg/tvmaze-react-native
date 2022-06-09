@@ -28,7 +28,7 @@ export const useShows = () => {
     if (err) {
       setError(err);
     }
-  }, []);
+  }, [page, shows]);
 
   const createSections = useCallback((episodes: Episode[]) => {
     const seasonSection: {

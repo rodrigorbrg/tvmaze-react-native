@@ -39,7 +39,13 @@
     "emulator": {
       "type": "android.emulator",
       "device": {
-        "avdName": "Pixel_4_API_31"
+        "avdName": "Pixel_4_API_27"
+      }
+    },
+    "android.attached": {
+      "type": "android.attached",
+      "device": {
+        "adbName": "RX8T305EY6K"
       }
     }
   },
@@ -51,6 +57,10 @@
     "ios.release": {
       "device": "simulator",
       "app": "ios.release"
+    },
+    "android.att.release": {
+      "device": "android.attached",
+      "app": "android.release"
     },
     "android.emu.debug": {
       "device": "emulator",
