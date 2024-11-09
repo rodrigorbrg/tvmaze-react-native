@@ -8,6 +8,8 @@ import {
   RefreshControl
 } from 'react-native';
 
+import Button from '@rodrigorbrg/app-ui/src/ui/atoms/button';
+
 import Cast from '../../../../components/Cast';
 import EpisodeItem from '../../../../components/EpisodeItem';
 import TitleSection from '../../../../components/TitleSection';
@@ -57,13 +59,13 @@ function EpisodeGuide({
         <View style={styles.headerPage}>
           <Image
             resizeMode={'contain'}
-            defaultSource={require('../../../../assets/images/default-movie.png')}
             source={{
               uri: image?.original,
               height: 200,
               width: 140
             }}
           />
+          <Button text='See More' />
           <View style={styles.description}>
             <Text
               ellipsizeMode={'tail'}

@@ -40,7 +40,6 @@ function Cast({
         <Image
           style={styles.image}
           resizeMode={'contain'}
-          defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: image.medium
           }}

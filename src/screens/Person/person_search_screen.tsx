@@ -37,7 +37,6 @@ const PersonScreen: React.FC<Props> = ({ route }) => {
         <Image
           style={styles.photo}
           resizeMode={'cover'}
-          defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: person?.image?.original,
             height: 200,

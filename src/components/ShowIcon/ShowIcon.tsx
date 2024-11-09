@@ -29,7 +29,6 @@ function ShowIcon({ _links }: { _links: { show: { href: string } } }) {
         <Image
           style={styles.image}
           resizeMode={'contain'}
-          defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: show?.image?.medium
           }}

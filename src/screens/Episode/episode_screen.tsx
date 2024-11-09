@@ -39,7 +39,6 @@ const EpisodeScreen: React.FC<Props> = ({ route }) => {
       <View>
         <Image
           resizeMode={'contain'}
-          defaultSource={require('../../assets/images/default-movie.png')}
           source={{
             uri: episode?.image?.original,
             width: imageWidth,
