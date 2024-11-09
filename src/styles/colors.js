@@ -1,4 +1,4 @@
-export default {
+export default colors = {
   primary: '#F6B20A',
   secondary: '#14331D',
   positive: '#49B648',
